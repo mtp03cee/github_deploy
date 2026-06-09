@@ -65,7 +65,7 @@ def load_config():
         with open("config.json", encoding="utf-8") as f:
             cfg = json.load(f)
     for key in ["METABASE_API_KEY", "METABASE_BASE_URL", "METABASE_DASHBOARD_ID",
-                "SLACK_WEBHOOK_URL", "METABASE_TABLE_ID"]:
+                "SLACK_WEBHOOK_URL", "METABASE_TABLE_ID", "METABASE_MODEL_CARD_ID"]:
         if os.environ.get(key):
             cfg[key.lower()] = os.environ[key]
     required = ["metabase_api_key", "metabase_base_url", "metabase_dashboard_id", "slack_webhook_url"]
@@ -289,23 +289,74 @@ def historico_to_csv(history):
     return buf.getvalue()
 
 
-def push_historico_to_metabase(history, cfg):
-    table_id = cfg.get("metabase_table_id")
-    if not table_id:
-        print("  AVISO: METABASE_TABLE_ID não configurado — pulando push para Metabase.")
-        return
-    csv_data = historico_to_csv(history)
-    h = {"X-API-Key": cfg["metabase_api_key"]}
-    r = requests.post(
-        f"{cfg['metabase_base_url']}/api/uploads/csv",
-        headers=h,
-        files={"file": ("historico_aberturas.csv", csv_data.encode("utf-8"), "text/csv")},
-        data={"table_id": int(table_id)},
+def historico_to_sql(history):
+    cols = (
+        "data, espera_total, cnpj_total, im_total, crm_total, "
+        "espera_sem_atualizacao, cnpj_sem_atualizacao, im_sem_atualizacao, crm_sem_atualizacao, "
+        "cnpj_atrasados, im_atrasados, cnpj_necessitam_acao, im_necessitam_acao"
     )
-    if not r.ok:
-        print(f"  AVISO: push Metabase falhou {r.status_code}: {r.text[:200]}")
+    lines = ["-- gerado automaticamente por run_diario.py", f"SELECT {cols} FROM ("]
+    for i, s in history_iter(history):
+        t  = s["totals"]
+        sa = s["sem_atualizacao"]
+        at = s["atrasados"]
+        na = s["necessitam_acao"]
+        sep = "  VALUES" if i == 0 else "        ,"
+        lines.append(
+            f"{sep} ('{s['data']}'"
+            f", {t.get('Espera') or 0}, {t.get('CNPJ') or 0}, {t.get('IM') or 0}, {t.get('CRM') or 0}"
+            f", {sa.get('Espera') or 0}, {sa.get('CNPJ') or 0}, {sa.get('IM') or 0}, {sa.get('CRM') or 0}"
+            f", {at.get('CNPJ') or 0}, {at.get('IM') or 0}"
+            f", {na.get('CNPJ') or 0}, {na.get('IM') or 0})"
+        )
+    lines.append(f") AS t({cols})")
+    lines.append("ORDER BY data")
+    return "\n".join(lines)
+
+
+def history_iter(history):
+    return enumerate(history)
+
+
+def push_historico_to_metabase(history, cfg):
+    model_card_id = cfg.get("metabase_model_card_id")
+    table_id      = cfg.get("metabase_table_id")
+
+    if model_card_id:
+        # Modo nativo: atualiza o SQL do Model
+        sql = historico_to_sql(history)
+        h = {"X-API-Key": cfg["metabase_api_key"], "Content-Type": "application/json"}
+        r = requests.put(
+            f"{cfg['metabase_base_url']}/api/card/{int(model_card_id)}",
+            headers=h,
+            json={"dataset_query": {
+                "type": "native",
+                "database": None,  # mantém o banco original
+                "native": {"query": sql},
+            }},
+        )
+        if not r.ok:
+            print(f"  AVISO: update Model Metabase falhou {r.status_code}: {r.text[:200]}")
+        else:
+            print(f"  Metabase Model {model_card_id} atualizado (SQL nativo).")
+
+    elif table_id:
+        # Modo CSV upload: substitui os dados da tabela
+        csv_data = historico_to_csv(history)
+        h = {"X-API-Key": cfg["metabase_api_key"]}
+        r = requests.post(
+            f"{cfg['metabase_base_url']}/api/uploads/csv",
+            headers=h,
+            files={"file": ("historico_aberturas.csv", csv_data.encode("utf-8"), "text/csv")},
+            data={"table_id": int(table_id)},
+        )
+        if not r.ok:
+            print(f"  AVISO: push CSV Metabase falhou {r.status_code}: {r.text[:200]}")
+        else:
+            print(f"  Metabase tabela {table_id} atualizada (CSV upload).")
+
     else:
-        print(f"  Metabase tabela {table_id} atualizada.")
+        print("  AVISO: METABASE_MODEL_CARD_ID e METABASE_TABLE_ID não configurados — pulando push.")
 
 
 def main():

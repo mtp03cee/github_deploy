@@ -33,6 +33,7 @@ jobs:
           METABASE_DASHBOARD_ID: ${{ secrets.METABASE_DASHBOARD_ID }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           METABASE_TABLE_ID: ${{ secrets.METABASE_TABLE_ID }}
+          METABASE_MODEL_CARD_ID: ${{ secrets.METABASE_MODEL_CARD_ID }}
           TZ: America/Sao_Paulo
         run: python run_diario.py
 

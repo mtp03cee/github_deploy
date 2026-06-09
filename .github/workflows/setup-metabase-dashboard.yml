@@ -2,6 +2,15 @@ name: Setup Metabase Dashboard (executar uma vez)
 
 on:
   workflow_dispatch:
+    inputs:
+      modo:
+        description: "Modo de criação"
+        required: true
+        default: "native"
+        type: choice
+        options:
+          - native
+          - csv-upload
 
 jobs:
   setup:
@@ -24,4 +33,9 @@ jobs:
         env:
           METABASE_API_KEY:  ${{ secrets.METABASE_API_KEY }}
           METABASE_BASE_URL: ${{ secrets.METABASE_BASE_URL }}
-        run: python setup_metabase_dashboard.py
+        run: |
+          if [ "${{ inputs.modo }}" = "native" ]; then
+            python setup_metabase_dashboard.py --native
+          else
+            python setup_metabase_dashboard.py
+          fi
