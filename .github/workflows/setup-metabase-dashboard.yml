@@ -29,10 +29,25 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
+      - name: Verificar secrets
+        run: |
+          echo "METABASE_API_KEY definido: ${{ secrets.METABASE_API_KEY != '' }}"
+          echo "METABASE_BASE_URL definido: ${{ secrets.METABASE_BASE_URL != '' }}"
+          if [ "${{ secrets.METABASE_API_KEY != '' }}" = "false" ]; then
+            echo "ERRO: secret METABASE_API_KEY nao encontrado no repositorio."
+            echo "Acesse: Settings > Secrets and variables > Actions > New repository secret"
+            exit 1
+          fi
+          if [ "${{ secrets.METABASE_BASE_URL != '' }}" = "false" ]; then
+            echo "ERRO: secret METABASE_BASE_URL nao encontrado no repositorio."
+            exit 1
+          fi
+
       - name: Criar dashboard no Metabase
         env:
           METABASE_API_KEY:  ${{ secrets.METABASE_API_KEY }}
           METABASE_BASE_URL: ${{ secrets.METABASE_BASE_URL }}
+          PYTHONUNBUFFERED: "1"
         run: |
           if [ "${{ inputs.modo }}" = "native" ]; then
             python setup_metabase_dashboard.py --native
