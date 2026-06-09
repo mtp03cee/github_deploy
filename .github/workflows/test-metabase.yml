@@ -22,7 +22,8 @@ jobs:
 
       - name: Testar conexão Metabase
         env:
-          METABASE_API_KEY:  ${{ secrets.METABASE_API_KEY }}
-          METABASE_BASE_URL: ${{ secrets.METABASE_BASE_URL }}
+          METABASE_API_KEY:      ${{ secrets.METABASE_API_KEY }}
+          METABASE_BASE_URL:     ${{ secrets.METABASE_BASE_URL }}
+          METABASE_DASHBOARD_ID: ${{ secrets.METABASE_DASHBOARD_ID }}
           PYTHONUNBUFFERED: "1"
         run: python -u test_metabase.py

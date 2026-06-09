@@ -46,15 +46,17 @@ jobs:
       - name: Criar dashboard (modo native)
         if: inputs.modo == 'native'
         env:
-          METABASE_API_KEY:  ${{ secrets.METABASE_API_KEY }}
-          METABASE_BASE_URL: ${{ secrets.METABASE_BASE_URL }}
+          METABASE_API_KEY:      ${{ secrets.METABASE_API_KEY }}
+          METABASE_BASE_URL:     ${{ secrets.METABASE_BASE_URL }}
+          METABASE_DASHBOARD_ID: ${{ secrets.METABASE_DASHBOARD_ID }}
           PYTHONUNBUFFERED: "1"
         run: python -u setup_metabase_dashboard.py --native
 
       - name: Criar dashboard (modo csv-upload)
         if: inputs.modo == 'csv-upload'
         env:
-          METABASE_API_KEY:  ${{ secrets.METABASE_API_KEY }}
-          METABASE_BASE_URL: ${{ secrets.METABASE_BASE_URL }}
+          METABASE_API_KEY:      ${{ secrets.METABASE_API_KEY }}
+          METABASE_BASE_URL:     ${{ secrets.METABASE_BASE_URL }}
+          METABASE_DASHBOARD_ID: ${{ secrets.METABASE_DASHBOARD_ID }}
           PYTHONUNBUFFERED: "1"
         run: python -u setup_metabase_dashboard.py

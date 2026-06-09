@@ -26,7 +26,7 @@ import sys
 
 import requests
 
-COLLECTION_PATH = ["[Atualizado]CS-clients", "Aberturas", "Life cycle"]
+COLLECTION_PATH = ["[Atualizado] CS-Clients", "Aberturas", "Life cycle"]
 DASHBOARD_NAME  = "Life cycle — Histórico Cumulativo"
 TABLE_PREFIX    = "historico_aberturas"
 MODEL_NAME      = "historico_aberturas_dados"
@@ -75,21 +75,39 @@ def find_collection(cfg):
 def find_db(cfg):
     if cfg.get("metabase_upload_db_id"):
         return int(cfg["metabase_upload_db_id"])
+
+    # Tenta listar databases diretamente
     r = requests.get(f"{cfg['metabase_base_url']}/api/database", headers=hdr(cfg))
-    r.raise_for_status()
-    data = r.json()
-    dbs = data if isinstance(data, list) else data.get("data", [])
-    # Prefer uploads-enabled DB
-    for db in dbs:
-        if db.get("uploads_enabled"):
-            print(f"  Banco (uploads): '{db['name']}' id={db['id']}")
-            return db["id"]
-    # Any non-sample DB
-    for db in dbs:
-        if "sample" not in db.get("name", "").lower():
-            print(f"  Banco: '{db['name']}' id={db['id']}")
-            return db["id"]
-    raise RuntimeError("Nenhum banco de dados disponível.")
+    if r.ok:
+        data = r.json()
+        dbs = data if isinstance(data, list) else data.get("data", [])
+        for db in dbs:
+            if db.get("uploads_enabled"):
+                print(f"  Banco (uploads): '{db['name']}' id={db['id']}")
+                return db["id"]
+        for db in dbs:
+            if "sample" not in db.get("name", "").lower():
+                print(f"  Banco: '{db['name']}' id={db['id']}")
+                return db["id"]
+
+    # Fallback: extrai database_id do dashboard existente
+    dash_id = cfg.get("metabase_dashboard_id")
+    if dash_id:
+        r2 = requests.get(
+            f"{cfg['metabase_base_url']}/api/dashboard/{dash_id}", headers=hdr(cfg)
+        )
+        if r2.ok:
+            cards = r2.json().get("dashcards") or r2.json().get("ordered_cards") or []
+            for c in cards:
+                card = c.get("card") or {}
+                db = (card.get("dataset_query") or {}).get("database")
+                if db:
+                    print(f"  Banco via dashboard: id={db}")
+                    return db
+
+    raise RuntimeError(
+        "Nenhum banco encontrado. Defina METABASE_UPLOAD_DB_ID nas variaveis de ambiente."
+    )
 
 
 # ── CSV upload (requer admin) ─────────────────────────────────────────────────
