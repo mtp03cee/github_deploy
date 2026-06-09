@@ -1,0 +1,28 @@
+name: Teste de Conexão Metabase
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Testar conexão Metabase
+        env:
+          METABASE_API_KEY:  ${{ secrets.METABASE_API_KEY }}
+          METABASE_BASE_URL: ${{ secrets.METABASE_BASE_URL }}
+          PYTHONUNBUFFERED: "1"
+        run: python -u test_metabase.py
