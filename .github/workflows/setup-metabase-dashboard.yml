@@ -29,19 +29,19 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Verificar secrets
+      - name: Diagnóstico do ambiente
+        env:
+          METABASE_API_KEY:  ${{ secrets.METABASE_API_KEY }}
+          METABASE_BASE_URL: ${{ secrets.METABASE_BASE_URL }}
         run: |
-          echo "METABASE_API_KEY definido: ${{ secrets.METABASE_API_KEY != '' }}"
-          echo "METABASE_BASE_URL definido: ${{ secrets.METABASE_BASE_URL != '' }}"
-          if [ "${{ secrets.METABASE_API_KEY != '' }}" = "false" ]; then
-            echo "ERRO: secret METABASE_API_KEY nao encontrado no repositorio."
-            echo "Acesse: Settings > Secrets and variables > Actions > New repository secret"
-            exit 1
-          fi
-          if [ "${{ secrets.METABASE_BASE_URL != '' }}" = "false" ]; then
-            echo "ERRO: secret METABASE_BASE_URL nao encontrado no repositorio."
-            exit 1
-          fi
+          echo "=== Python ==="
+          python --version
+          python -c "import requests, csv, io, json, os, sys; print('imports ok')"
+          echo "=== Arquivos ==="
+          ls -la
+          echo "=== Secrets presentes ==="
+          [ -n "$METABASE_API_KEY"  ] && echo "METABASE_API_KEY:  SIM" || echo "METABASE_API_KEY:  NAO DEFINIDO"
+          [ -n "$METABASE_BASE_URL" ] && echo "METABASE_BASE_URL: SIM" || echo "METABASE_BASE_URL: NAO DEFINIDO"
 
       - name: Criar dashboard no Metabase
         env:
@@ -49,8 +49,9 @@ jobs:
           METABASE_BASE_URL: ${{ secrets.METABASE_BASE_URL }}
           PYTHONUNBUFFERED: "1"
         run: |
+          set -xe
           if [ "${{ inputs.modo }}" = "native" ]; then
-            python setup_metabase_dashboard.py --native
+            python -u setup_metabase_dashboard.py --native
           else
-            python setup_metabase_dashboard.py
+            python -u setup_metabase_dashboard.py
           fi
