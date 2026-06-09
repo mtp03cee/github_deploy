@@ -65,7 +65,7 @@ def load_config():
         with open("config.json", encoding="utf-8") as f:
             cfg = json.load(f)
     for key in ["METABASE_API_KEY", "METABASE_BASE_URL", "METABASE_DASHBOARD_ID",
-                "SLACK_WEBHOOK_URL"]:
+                "SLACK_WEBHOOK_URL", "METABASE_TABLE_ID"]:
         if os.environ.get(key):
             cfg[key.lower()] = os.environ[key]
     required = ["metabase_api_key", "metabase_base_url", "metabase_dashboard_id", "slack_webhook_url"]
@@ -258,6 +258,56 @@ def regenerate_dashboard(history, template_path, output_path):
         f.write(html)
 
 
+def historico_to_csv(history):
+    rows = []
+    for s in history:
+        t  = s["totals"]
+        sa = s["sem_atualizacao"]
+        at = s["atrasados"]
+        na = s["necessitam_acao"]
+        rows.append({
+            "data":                   s["data"],
+            "espera_total":           t.get("Espera") or 0,
+            "cnpj_total":             t.get("CNPJ")   or 0,
+            "im_total":               t.get("IM")     or 0,
+            "crm_total":              t.get("CRM")    or 0,
+            "espera_sem_atualizacao": sa.get("Espera") or 0,
+            "cnpj_sem_atualizacao":   sa.get("CNPJ")   or 0,
+            "im_sem_atualizacao":     sa.get("IM")     or 0,
+            "crm_sem_atualizacao":    sa.get("CRM")    or 0,
+            "cnpj_atrasados":         at.get("CNPJ") or 0,
+            "im_atrasados":           at.get("IM")   or 0,
+            "cnpj_necessitam_acao":   na.get("CNPJ") or 0,
+            "im_necessitam_acao":     na.get("IM")   or 0,
+        })
+    buf = io.StringIO()
+    if rows:
+        import csv as _csv
+        w = _csv.DictWriter(buf, fieldnames=list(rows[0].keys()))
+        w.writeheader()
+        w.writerows(rows)
+    return buf.getvalue()
+
+
+def push_historico_to_metabase(history, cfg):
+    table_id = cfg.get("metabase_table_id")
+    if not table_id:
+        print("  AVISO: METABASE_TABLE_ID não configurado — pulando push para Metabase.")
+        return
+    csv_data = historico_to_csv(history)
+    h = {"X-API-Key": cfg["metabase_api_key"]}
+    r = requests.post(
+        f"{cfg['metabase_base_url']}/api/uploads/csv",
+        headers=h,
+        files={"file": ("historico_aberturas.csv", csv_data.encode("utf-8"), "text/csv")},
+        data={"table_id": int(table_id)},
+    )
+    if not r.ok:
+        print(f"  AVISO: push Metabase falhou {r.status_code}: {r.text[:200]}")
+    else:
+        print(f"  Metabase tabela {table_id} atualizada.")
+
+
 def main():
     cfg = load_config()
     print(f"[{datetime.now().isoformat()}] Pipeline iniciado")
@@ -293,6 +343,9 @@ def main():
 
     regenerate_dashboard(history, TEMPLATE_PATH, DASHBOARD_HTML_PATH)
     print(f"  Dashboard atualizado: {DASHBOARD_HTML_PATH}")
+
+    push_historico_to_metabase(history, cfg)
+
     print(f"[{datetime.now().isoformat()}] Concluido.")
 
 

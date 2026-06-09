@@ -1,0 +1,27 @@
+name: Setup Metabase Dashboard (executar uma vez)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Criar dashboard no Metabase
+        env:
+          METABASE_API_KEY:  ${{ secrets.METABASE_API_KEY }}
+          METABASE_BASE_URL: ${{ secrets.METABASE_BASE_URL }}
+        run: python setup_metabase_dashboard.py
