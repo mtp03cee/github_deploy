@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard cumulativo - Abertura</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+body{margin:0;padding:24px;background:#0f172a;color:#e2e8f0;font-family:-apple-system,Segoe UI,Roboto,sans-serif}
+h1{margin:0 0 4px}
+h2{font-size:14px;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin:0 0 12px}
+.card{background:#1e293b;border:1px solid #334155;border-radius:12px;padding:18px;margin-bottom:16px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.chart-box{position:relative;height:340px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid #334155}
+th{color:#94a3b8;font-weight:500;font-size:11px;text-transform:uppercase}
+td.num{text-align:right;font-variant-numeric:tabular-nums}
+.up{color:#ef4444}
+.down{color:#22c55e}
+.flat{color:#94a3b8}
+.pill{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600}
+</style>
+</head>
+<body>
+<h1>Dashboard cumulativo de Abertura</h1>
+<p style="color:#94a3b8;margin:0 0 24px">Atualizado a cada execucao do pipeline diario</p>
+
+<div class="card"><h2>Volume por categoria - serie temporal</h2><div class="chart-box"><canvas id="volTrend"></canvas></div></div>
+
+<div class="grid2">
+<div class="card"><h2>Sem atualizacao &gt;5d</h2><div class="chart-box"><canvas id="saTrend"></canvas></div></div>
+<div class="card"><h2>Atrasados (fluxo normal)</h2><div class="chart-box"><canvas id="atTrend"></canvas></div></div>
+</div>
+
+<div class="card"><h2>Cohort agregado - delta dia-a-dia</h2>
+<table id="cohort">
+<thead><tr><th>Data</th><th class="num">Espera</th><th class="num">CNPJ</th><th class="num">IM</th><th class="num">CRM</th><th class="num">Sem atual (total)</th><th class="num">Necessitam acao (total)</th></tr></thead>
+<tbody></tbody>
+</table>
+</div>
+
+<div class="card"><h2>Cohort por card - para onde foram?</h2>
+<p style="color:#94a3b8;margin:0 0 12px;font-size:13px">Dos cards que estavam em CNPJ/IM em cada um dos ultimos 7 dias, onde estao hoje. Avancou = ir para proxima etapa do fluxo (CNPJ -&gt; IM -&gt; CRM) ou sair da base.</p>
+<table id="cohortMov">
+<thead><tr>
+<th>Data inicio</th><th>De</th><th class="num">Total</th>
+<th class="num">% ainda</th><th class="num">% avancou</th><th class="num">% regrediu</th>
+<th>Distribuicao hoje</th>
+</tr></thead><tbody></tbody></table>
+</div>
+
+<div class="card"><h2>Velocidade - % que avancou por cohort</h2>
+<div class="chart-box"><canvas id="cohortVelocity"></canvas></div></div>
+
+<script>
+const HISTORY = [{"data": "2026-05-13", "totals": {"Espera": 70, "CNPJ": 60, "IM": 85, "CRM": 168}, "sem_atualizacao": {"Espera": 62, "CNPJ": 9, "IM": 24, "CRM": null}, "atrasados": {"CNPJ": 18, "IM": 35}, "necessitam_acao": {"CNPJ": 35, "IM": 20}}, {"data": "2026-05-14", "totals": {"Espera": 73, "CNPJ": 56, "IM": 86, "CRM": 185}, "sem_atualizacao": {"Espera": 37, "CNPJ": 7, "IM": 8, "CRM": 178}, "atrasados": {"CNPJ": 18, "IM": 36}, "necessitam_acao": {"CNPJ": 30, "IM": 20}}, {"data": "2026-05-15", "totals": {"Espera": 73, "CNPJ": 57, "IM": 87, "CRM": 185}, "sem_atualizacao": {"Espera": 36, "CNPJ": 7, "IM": 8, "CRM": 178}, "atrasados": {"CNPJ": 18, "IM": 36}, "necessitam_acao": {"CNPJ": 30, "IM": 21}}, {"data": "2026-05-16", "totals": {"Espera": 72, "CNPJ": 57, "IM": 84, "CRM": 188}, "sem_atualizacao": {"Espera": 36, "CNPJ": 8, "IM": 8, "CRM": 179}, "atrasados": {"CNPJ": 20, "IM": 34}, "necessitam_acao": {"CNPJ": 30, "IM": 20}}, {"data": "2026-05-20", "totals": {"Espera": 73, "CNPJ": 57, "IM": 84, "CRM": 191}, "sem_atualizacao": {"Espera": 68, "CNPJ": 14, "IM": 19, "CRM": 185}, "atrasados": {"CNPJ": 19, "IM": 33}, "necessitam_acao": {"CNPJ": 32, "IM": 20}}, {"data": "2026-05-22", "totals": {"Espera": 73, "CNPJ": 57, "IM": 85, "CRM": 192}, "sem_atualizacao": {"Espera": 57, "CNPJ": 17, "IM": 30, "CRM": 187}, "atrasados": {"CNPJ": 20, "IM": 35}, "necessitam_acao": {"CNPJ": 26, "IM": 20}}, {"data": "2026-05-25", "totals": {"Espera": 75, "CNPJ": 44, "IM": 100, "CRM": 191}, "sem_atualizacao": {"Espera": 58, "CNPJ": 13, "IM": 43, "CRM": 188}, "atrasados": {"CNPJ": 21, "IM": 43}, "necessitam_acao": {"CNPJ": 13, "IM": 31}}, {"data": "2026-05-26", "totals": {"Espera": 75, "CNPJ": 44, "IM": 98, "CRM": 193}, "sem_atualizacao": {"Espera": 62, "CNPJ": 12, "IM": 24, "CRM": 189}, "atrasados": {"CNPJ": 19, "IM": 42}, "necessitam_acao": {"CNPJ": 13, "IM": 31}}, {"data": "2026-05-27", "totals": {"Espera": 73, "CNPJ": 45, "IM": 98, "CRM": 194}, "sem_atualizacao": {"Espera": 65, "CNPJ": 11, "IM": 26, "CRM": 190}, "atrasados": {"CNPJ": 19, "IM": 42}, "necessitam_acao": {"CNPJ": 13, "IM": 31}}, {"data": "2026-05-28", "totals": {"Espera": 74, "CNPJ": 42, "IM": 101, "CRM": 195}, "sem_atualizacao": {"Espera": 66, "CNPJ": 16, "IM": 56, "CRM": 190}, "atrasados": {"CNPJ": 18, "IM": 44}, "necessitam_acao": {"CNPJ": 13, "IM": 31}}, {"data": "2026-05-29", "totals": {"Espera": 75, "CNPJ": 42, "IM": 101, "CRM": 195}, "sem_atualizacao": {"Espera": 66, "CNPJ": 16, "IM": 33, "CRM": 191}, "atrasados": {"CNPJ": 18, "IM": 44}, "necessitam_acao": {"CNPJ": 13, "IM": 32}}, {"data": "2026-06-01", "totals": {"Espera": 76, "CNPJ": 42, "IM": 99, "CRM": 197}, "sem_atualizacao": {"Espera": 72, "CNPJ": 21, "IM": 48, "CRM": 194}, "atrasados": {"CNPJ": 21, "IM": 44}, "necessitam_acao": {"CNPJ": 13, "IM": 32}}, {"data": "2026-06-02", "totals": {"Espera": 76, "CNPJ": 43, "IM": 99, "CRM": 197}, "sem_atualizacao": {"Espera": 72, "CNPJ": 33, "IM": 64, "CRM": 195}, "atrasados": {"CNPJ": 22, "IM": 44}, "necessitam_acao": {"CNPJ": 13, "IM": 32}}, {"data": "2026-06-03", "totals": {"Espera": 75, "CNPJ": 44, "IM": 99, "CRM": 197}, "sem_atualizacao": {"Espera": 70, "CNPJ": 34, "IM": 71, "CRM": 195}, "atrasados": {"CNPJ": 22, "IM": 44}, "necessitam_acao": {"CNPJ": 13, "IM": 32}}, {"data": "2026-06-08", "totals": {"Espera": 72, "CNPJ": 43, "IM": 88, "CRM": 210}, "sem_atualizacao": {"Espera": 69, "CNPJ": 21, "IM": 49, "CRM": 197}, "atrasados": {"CNPJ": 21, "IM": 45}, "necessitam_acao": {"CNPJ": 16, "IM": 22}}, {"data": "2026-06-09", "totals": {"Espera": 75, "CNPJ": 41, "IM": 86, "CRM": 214}, "sem_atualizacao": {"Espera": 71, "CNPJ": 21, "IM": 34, "CRM": 208}, "atrasados": {"CNPJ": 18, "IM": 43}, "necessitam_acao": {"CNPJ": 14, "IM": 25}}];
+const COHORTS = [];
+const COLORS = {Espera:'#64748b', CNPJ:'#3b82f6', IM:'#10b981', CRM:'#f59e0b'};
+Chart.defaults.color = '#cbd5e1';
+Chart.defaults.borderColor = '#334155';
+const labels = HISTORY.map(h => h.data);
+
+function series(path) {
+  return HISTORY.map(h => {
+    let v = h;
+    for (const k of path.split('.')) v = v ? v[k] : null;
+    return v == null ? null : v;
+  });
+}
+
+new Chart(document.getElementById('volTrend'), {
+  type: 'line',
+  data: {
+    labels,
+    datasets: ['Espera','CNPJ','IM','CRM'].map(c => ({
+      label: c, data: series('totals.'+c),
+      borderColor: COLORS[c], backgroundColor: COLORS[c]+'33',
+      tension: .3, borderWidth: 2
+    }))
+  },
+  options: { plugins:{legend:{position:'bottom'}}, scales:{y:{beginAtZero:false,grid:{color:'#1e293b'}}} }
+});
+
+new Chart(document.getElementById('saTrend'), {
+  type: 'line',
+  data: {
+    labels,
+    datasets: ['Espera','CNPJ','IM','CRM'].map(c => ({
+      label: c, data: series('sem_atualizacao.'+c),
+      borderColor: COLORS[c], tension: .3, borderWidth: 2
+    }))
+  },
+  options: { plugins:{legend:{position:'bottom'}}, scales:{y:{beginAtZero:true,grid:{color:'#1e293b'}}} }
+});
+
+new Chart(document.getElementById('atTrend'), {
+  type: 'line',
+  data: {
+    labels,
+    datasets: ['CNPJ','IM'].map(c => ({
+      label: c, data: series('atrasados.'+c),
+      borderColor: COLORS[c], tension: .3, borderWidth: 2
+    }))
+  },
+  options: { plugins:{legend:{position:'bottom'}}, scales:{y:{beginAtZero:true,grid:{color:'#1e293b'}}} }
+});
+
+function sumValues(obj) {
+  if (!obj) return null;
+  return Object.values(obj).filter(v => v != null).reduce((a,b) => a+b, 0);
+}
+function deltaSpan(curr, prev) {
+  if (prev == null || curr == null) return '';
+  const d = curr - prev;
+  if (d === 0) return ' <span class="flat">=</span>';
+  if (d > 0)   return ' <span class="up">+' + d + '</span>';
+  return ' <span class="down">' + d + '</span>';
+}
+function cell(curr, prev) {
+  const v = (curr == null ? '-' : curr);
+  return v + deltaSpan(curr, prev);
+}
+
+const tbody = document.querySelector('#cohort tbody');
+HISTORY.forEach((h, i) => {
+  const prev = i > 0 ? HISTORY[i-1] : null;
+  const totSA = sumValues(h.sem_atualizacao);
+  const totNA = sumValues(h.necessitam_acao);
+  const prevSA = prev ? sumValues(prev.sem_atualizacao) : null;
+  const prevNA = prev ? sumValues(prev.necessitam_acao) : null;
+  const row =
+    '<tr><td>' + h.data + '</td>' +
+    '<td class="num">' + cell(h.totals.Espera, prev ? prev.totals.Espera : null) + '</td>' +
+    '<td class="num">' + cell(h.totals.CNPJ,   prev ? prev.totals.CNPJ   : null) + '</td>' +
+    '<td class="num">' + cell(h.totals.IM,     prev ? prev.totals.IM     : null) + '</td>' +
+    '<td class="num">' + cell(h.totals.CRM,    prev ? prev.totals.CRM    : null) + '</td>' +
+    '<td class="num">' + cell(totSA, prevSA) + '</td>' +
+    '<td class="num">' + cell(totNA, prevNA) + '</td>' +
+    '</tr>';
+  tbody.insertAdjacentHTML('beforeend', row);
+});
+
+// Cohort por card
+const cohortTbody = document.querySelector('#cohortMov tbody');
+if (!COHORTS || COHORTS.length === 0) {
+  cohortTbody.insertAdjacentHTML('beforeend',
+    '<tr><td colspan="7" style="color:#94a3b8;text-align:center;padding:24px">Sem dados de cohort por card ainda - precisa de pelo menos 2 dias de execucao com tracking individual ativo.</td></tr>');
+} else {
+  COHORTS.forEach(c => {
+    const d = c.distribution;
+    const distStr = ['Espera','CNPJ','IM','CRM','OUT','GONE']
+      .filter(k => d[k] > 0)
+      .map(k => k + ':' + d[k])
+      .join(' / ');
+    const pillStyle = 'background:' + COLORS[c.from_cat] + '33;color:' + COLORS[c.from_cat];
+    const row = '<tr>' +
+      '<td>' + c.cohort_date + '</td>' +
+      '<td><span class="pill" style="' + pillStyle + '">' + c.from_cat + '</span></td>' +
+      '<td class="num">' + c.initial + '</td>' +
+      '<td class="num">' + c.pct_ainda + '%</td>' +
+      '<td class="num down">' + c.pct_avancou + '%</td>' +
+      '<td class="num up">' + c.pct_regrediu + '%</td>' +
+      '<td style="font-size:11px;color:#94a3b8">' + distStr + '</td>' +
+      '</tr>';
+    cohortTbody.insertAdjacentHTML('beforeend', row);
+  });
+
+  const cnpjCohorts = COHORTS.filter(c => c.from_cat === 'CNPJ');
+  const imCohorts = COHORTS.filter(c => c.from_cat === 'IM');
+  const allDates = [...new Set([...cnpjCohorts.map(c=>c.cohort_date), ...imCohorts.map(c=>c.cohort_date)])].sort();
+  function alignPct(cohorts) {
+    return allDates.map(d => {
+      const m = cohorts.find(c => c.cohort_date === d);
+      return m ? m.pct_avancou : null;
+    });
+  }
+  new Chart(document.getElementById('cohortVelocity'), {
+    type: 'bar',
+    data: {
+      labels: allDates,
+      datasets: [
+        {label: 'CNPJ avancou (-> IM/CRM)', data: alignPct(cnpjCohorts), backgroundColor: COLORS.CNPJ, borderRadius: 6},
+        {label: 'IM avancou (-> CRM)',      data: alignPct(imCohorts),   backgroundColor: COLORS.IM,   borderRadius: 6}
+      ]
+    },
+    options: {
+      plugins:{legend:{position:'bottom'}, tooltip:{callbacks:{label:c=>c.dataset.label+': '+c.parsed.y+'%'}}},
+      scales:{y:{beginAtZero:true,max:100,ticks:{callback:v=>v+'%'},grid:{color:'#1e293b'}}, x:{grid:{display:false}}}
+    }
+  });
+}
+</script>
+</body>
+</html>
