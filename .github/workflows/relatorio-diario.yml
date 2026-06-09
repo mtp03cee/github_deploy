@@ -1,0 +1,48 @@
+name: Relatório Diário de Abertura
+
+on:
+  schedule:
+    # 9h UTC = 6h horário de Brasília (UTC-3)
+    - cron: '0 9 * * *'
+  workflow_dispatch:  # permite disparo manual pelo Actions
+
+permissions:
+  contents: write  # necessário para commitar o historico.json atualizado
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests pandas
+
+      - name: Run pipeline
+        env:
+          METABASE_API_KEY: ${{ secrets.METABASE_API_KEY }}
+          METABASE_BASE_URL: ${{ secrets.METABASE_BASE_URL }}
+          METABASE_DASHBOARD_ID: ${{ secrets.METABASE_DASHBOARD_ID }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          TZ: America/Sao_Paulo
+        run: python run_diario.py
+
+      - name: Commit histórico atualizado
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add historico.json dashboard_cumulativo.html
+          if git diff --staged --quiet; then
+            echo "Nenhuma mudança para commitar"
+          else
+            git commit -m "chore: snapshot de $(date +%Y-%m-%d)"
+            git push
+          fi

@@ -1,0 +1,13 @@
+# Credenciais e configuracao local — NUNCA versionar
+config.json
+.env
+
+# Cache Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Sistema
+.DS_Store
+Thumbs.db

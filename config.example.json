@@ -1,0 +1,6 @@
+{
+  "metabase_api_key": "mb_COLE_AQUI_SUA_API_KEY",
+  "metabase_base_url": "https://metabase.selvia.app",
+  "metabase_dashboard_id": 111,
+  "slack_webhook_url": "https://hooks.slack.com/triggers/COLE_AQUI_O_TRIGGER_URL"
+}
