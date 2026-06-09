@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       modo:
-        description: "Modo de criação"
+        description: "Modo de criação (native = sem admin | csv-upload = com admin)"
         required: true
         default: "native"
         type: choice
@@ -43,15 +43,18 @@ jobs:
           [ -n "$METABASE_API_KEY"  ] && echo "METABASE_API_KEY:  SIM" || echo "METABASE_API_KEY:  NAO DEFINIDO"
           [ -n "$METABASE_BASE_URL" ] && echo "METABASE_BASE_URL: SIM" || echo "METABASE_BASE_URL: NAO DEFINIDO"
 
-      - name: Criar dashboard no Metabase
+      - name: Criar dashboard (modo native)
+        if: inputs.modo == 'native'
         env:
           METABASE_API_KEY:  ${{ secrets.METABASE_API_KEY }}
           METABASE_BASE_URL: ${{ secrets.METABASE_BASE_URL }}
           PYTHONUNBUFFERED: "1"
-        run: |
-          set -xe
-          if [ "${{ inputs.modo }}" = "native" ]; then
-            python -u setup_metabase_dashboard.py --native
-          else
-            python -u setup_metabase_dashboard.py
-          fi
+        run: python -u setup_metabase_dashboard.py --native
+
+      - name: Criar dashboard (modo csv-upload)
+        if: inputs.modo == 'csv-upload'
+        env:
+          METABASE_API_KEY:  ${{ secrets.METABASE_API_KEY }}
+          METABASE_BASE_URL: ${{ secrets.METABASE_BASE_URL }}
+          PYTHONUNBUFFERED: "1"
+        run: python -u setup_metabase_dashboard.py
