@@ -1,36 +1,28 @@
 """
 setup_metabase_dashboard.py
 ---------------------------
-Executa UMA VEZ para criar o dashboard cumulativo no Metabase.
+Cria o dashboard de texto no Metabase em:
+  [Atualizado] CS-Clients / Aberturas/Life Cycle
 
-Modos de operação:
-  python setup_metabase_dashboard.py           → usa CSV upload (requer admin)
-  python setup_metabase_dashboard.py --native  → usa SQL nativo (sem admin)
+Permissões necessárias: criar dashboards e text cards (sem acesso ao banco).
 
-No modo --native, cria um Model com UNION ALL dos dados do historico.json.
-O pipeline diário atualiza o SQL desse Model via PUT /api/card/{id}.
+Ao final imprime METABASE_TEXT_DASHBOARD_ID — adicione como secret no GitHub.
+A partir daí, run_diario.py atualiza os cards automaticamente todo dia.
 
-Ao final imprime o METABASE_MODEL_CARD_ID — adicione como secret no GitHub.
-
-Variáveis de ambiente (ou config.json):
-  METABASE_API_KEY   — token da API do Metabase
-  METABASE_BASE_URL  — ex: https://metabase.selvia.app
-  METABASE_UPLOAD_DB_ID  (opcional) — banco para uploads/nativo; detectado se omitido
+Variáveis de ambiente:
+  METABASE_API_KEY, METABASE_BASE_URL
 """
 
-import csv
-import io
 import json
 import os
 import sys
 
 import requests
 
-COLLECTION_PATH = ["[Atualizado] CS-Clients", "Aberturas", "Life cycle"]
-DASHBOARD_NAME  = "Life cycle — Histórico Cumulativo"
-TABLE_PREFIX    = "historico_aberturas"
-MODEL_NAME      = "historico_aberturas_dados"
-HISTORY_PATH    = "historico.json"
+COLLECTION_ID  = 99   # Aberturas/Life Cycle
+DASHBOARD_NAME = "Life cycle — Histórico Cumulativo"
+HISTORY_PATH   = "historico.json"
+PAGES_URL_ENV  = "PAGES_URL"
 
 
 def load_cfg():
@@ -38,7 +30,8 @@ def load_cfg():
     if os.path.exists("config.json"):
         with open("config.json", encoding="utf-8") as f:
             cfg = json.load(f)
-    for k in ["METABASE_API_KEY", "METABASE_BASE_URL", "METABASE_UPLOAD_DB_ID"]:
+    for k in ["METABASE_API_KEY", "METABASE_BASE_URL", "PAGES_URL",
+              "METABASE_TEXT_DASHBOARD_ID"]:
         if os.environ.get(k):
             cfg[k.lower()] = os.environ[k]
     missing = [k for k in ["metabase_api_key", "metabase_base_url"] if not cfg.get(k)]
@@ -52,300 +45,171 @@ def hdr(cfg):
     return {"X-API-Key": cfg["metabase_api_key"], "Content-Type": "application/json"}
 
 
-def find_collection(cfg):
-    r = requests.get(f"{cfg['metabase_base_url']}/api/collection/tree", headers=hdr(cfg))
-    r.raise_for_status()
+def find_or_create_dashboard(cfg):
+    existing_id = cfg.get("metabase_text_dashboard_id")
+    if existing_id:
+        print(f"  Usando dashboard existente: id={existing_id}")
+        return int(existing_id)
 
-    def search(items, parts):
-        target = parts[0].lower().strip()
-        for item in items:
-            if item.get("name", "").lower().strip() == target:
-                if len(parts) == 1:
-                    return item["id"]
-                return search(item.get("children", []), parts[1:])
-        return None
-
-    cid = search(r.json(), COLLECTION_PATH)
-    if not cid:
-        raise RuntimeError(f"Coleção não encontrada: {' / '.join(COLLECTION_PATH)}")
-    print(f"  Coleção: {' / '.join(COLLECTION_PATH)} → id={cid}")
-    return cid
-
-
-def find_db(cfg):
-    if cfg.get("metabase_upload_db_id"):
-        return int(cfg["metabase_upload_db_id"])
-
-    # Tenta listar databases diretamente
-    r = requests.get(f"{cfg['metabase_base_url']}/api/database", headers=hdr(cfg))
-    if r.ok:
-        data = r.json()
-        dbs = data if isinstance(data, list) else data.get("data", [])
-        for db in dbs:
-            if db.get("uploads_enabled"):
-                print(f"  Banco (uploads): '{db['name']}' id={db['id']}")
-                return db["id"]
-        for db in dbs:
-            if "sample" not in db.get("name", "").lower():
-                print(f"  Banco: '{db['name']}' id={db['id']}")
-                return db["id"]
-
-    # Fallback: extrai database_id do dashboard existente
-    dash_id = cfg.get("metabase_dashboard_id")
-    if dash_id:
-        r2 = requests.get(
-            f"{cfg['metabase_base_url']}/api/dashboard/{dash_id}", headers=hdr(cfg)
-        )
-        if r2.ok:
-            cards = r2.json().get("dashcards") or r2.json().get("ordered_cards") or []
-            for c in cards:
-                card = c.get("card") or {}
-                db = (card.get("dataset_query") or {}).get("database")
-                if db:
-                    print(f"  Banco via dashboard: id={db}")
-                    return db
-
-    raise RuntimeError(
-        "Nenhum banco encontrado. Defina METABASE_UPLOAD_DB_ID nas variaveis de ambiente."
-    )
-
-
-# ── CSV upload (requer admin) ─────────────────────────────────────────────────
-
-def historico_to_csv(history):
-    rows = []
-    for s in history:
-        t  = s["totals"];          sa = s["sem_atualizacao"]
-        at = s["atrasados"];       na = s["necessitam_acao"]
-        rows.append({
-            "data":                   s["data"],
-            "espera_total":           t.get("Espera") or 0,
-            "cnpj_total":             t.get("CNPJ")   or 0,
-            "im_total":               t.get("IM")     or 0,
-            "crm_total":              t.get("CRM")    or 0,
-            "espera_sem_atualizacao": sa.get("Espera") or 0,
-            "cnpj_sem_atualizacao":   sa.get("CNPJ")   or 0,
-            "im_sem_atualizacao":     sa.get("IM")     or 0,
-            "crm_sem_atualizacao":    sa.get("CRM")    or 0,
-            "cnpj_atrasados":         at.get("CNPJ") or 0,
-            "im_atrasados":           at.get("IM")   or 0,
-            "cnpj_necessitam_acao":   na.get("CNPJ") or 0,
-            "im_necessitam_acao":     na.get("IM")   or 0,
-        })
-    buf = io.StringIO()
-    if rows:
-        w = csv.DictWriter(buf, fieldnames=list(rows[0].keys()))
-        w.writeheader()
-        w.writerows(rows)
-    return buf.getvalue()
-
-
-def setup_via_csv(cfg, history, coll_id, db_id):
-    print("Fazendo upload do CSV...")
-    h = {"X-API-Key": cfg["metabase_api_key"]}
-    r = requests.post(
-        f"{cfg['metabase_base_url']}/api/uploads/csv",
-        headers=h,
-        files={"file": (f"{TABLE_PREFIX}.csv", historico_to_csv(history).encode("utf-8"), "text/csv")},
-        data={"collection_id": coll_id, "db_id": db_id, "table_prefix": TABLE_PREFIX},
-    )
-    if not r.ok:
-        raise RuntimeError(f"Upload falhou {r.status_code}: {r.text[:400]}")
-    model_card_id = r.json()["id"]
-    print(f"  model card_id={model_card_id}")
-
-    table_id = _get_model_table_id(cfg, model_card_id)
-    fields   = _get_fields(cfg, table_id)
-    print(f"  table_id={table_id}, campos: {sorted(fields.keys())}")
-    return model_card_id, db_id, table_id, fields
-
-
-def _get_model_table_id(cfg, card_id):
-    r = requests.get(f"{cfg['metabase_base_url']}/api/card/{card_id}", headers=hdr(cfg))
-    r.raise_for_status()
-    tid = r.json().get("table_id")
-    if not tid:
-        raise RuntimeError(f"table_id não encontrado no card {card_id}")
-    return tid
-
-
-def _get_fields(cfg, table_id):
     r = requests.get(
-        f"{cfg['metabase_base_url']}/api/table/{table_id}/query_metadata",
-        headers=hdr(cfg),
+        f"{cfg['metabase_base_url']}/api/collection/{COLLECTION_ID}/items?models=dashboard",
+        headers=hdr(cfg), timeout=10,
     )
-    r.raise_for_status()
-    return {f["name"]: f["id"] for f in r.json().get("fields", [])}
+    if r.ok:
+        for item in r.json().get("data", []):
+            if item.get("name") == DASHBOARD_NAME:
+                print(f"  Dashboard encontrado: id={item['id']}")
+                return item["id"]
 
-
-# ── Native SQL model (sem admin) ──────────────────────────────────────────────
-
-def historico_to_sql(history):
-    """Gera UNION ALL com todos os snapshots. Funciona em PostgreSQL, MySQL, SQLite."""
-    cols = (
-        "data, espera_total, cnpj_total, im_total, crm_total, "
-        "espera_sem_atualizacao, cnpj_sem_atualizacao, im_sem_atualizacao, crm_sem_atualizacao, "
-        "cnpj_atrasados, im_atrasados, cnpj_necessitam_acao, im_necessitam_acao"
-    )
-    lines = [f"-- gerado automaticamente por setup_metabase_dashboard.py", f"SELECT {cols} FROM ("]
-    for i, s in enumerate(history):
-        t  = s["totals"];    sa = s["sem_atualizacao"]
-        at = s["atrasados"]; na = s["necessitam_acao"]
-        sep = "  VALUES" if i == 0 else "        ,"
-        lines.append(
-            f"{sep} ('{s['data']}'"
-            f", {t.get('Espera') or 0}, {t.get('CNPJ') or 0}, {t.get('IM') or 0}, {t.get('CRM') or 0}"
-            f", {sa.get('Espera') or 0}, {sa.get('CNPJ') or 0}, {sa.get('IM') or 0}, {sa.get('CRM') or 0}"
-            f", {at.get('CNPJ') or 0}, {at.get('IM') or 0}"
-            f", {na.get('CNPJ') or 0}, {na.get('IM') or 0})"
-        )
-    lines.append(f") AS t({cols})")
-    lines.append("ORDER BY data")
-    return "\n".join(lines)
-
-
-def setup_via_native(cfg, history, coll_id, db_id):
-    print("Criando Model nativo (SQL)...")
-    sql = historico_to_sql(history)
-    card = {
-        "name": MODEL_NAME,
-        "collection_id": coll_id,
-        "display": "table",
-        "type": "model",
-        "dataset_query": {
-            "type": "native",
-            "database": db_id,
-            "native": {"query": sql},
-        },
-        "visualization_settings": {},
-    }
-    r = requests.post(f"{cfg['metabase_base_url']}/api/card", headers=hdr(cfg), json=card)
-    r.raise_for_status()
-    model_card_id = r.json()["id"]
-    print(f"  Model criado: card_id={model_card_id}")
-    return model_card_id
-
-
-# ── Perguntas e dashboard ─────────────────────────────────────────────────────
-
-def make_question_from_table(cfg, coll_id, db_id, table_id, date_fid, name, metrics):
-    card = {
-        "name": name,
-        "collection_id": coll_id,
-        "display": "line",
-        "dataset_query": {
-            "type": "query",
-            "database": db_id,
-            "query": {
-                "source-table": table_id,
-                "order-by": [["asc", ["field", date_fid, None]]],
-            },
-        },
-        "visualization_settings": {"graph.dimensions": ["data"], "graph.metrics": metrics},
-    }
-    r = requests.post(f"{cfg['metabase_base_url']}/api/card", headers=hdr(cfg), json=card)
-    r.raise_for_status()
-    return r.json()["id"]
-
-
-def make_question_from_model(cfg, coll_id, db_id, model_card_id, name, metrics):
-    card = {
-        "name": name,
-        "collection_id": coll_id,
-        "display": "line",
-        "dataset_query": {
-            "type": "query",
-            "database": db_id,
-            "query": {"source-card": model_card_id},
-        },
-        "visualization_settings": {"graph.dimensions": ["data"], "graph.metrics": metrics},
-    }
-    r = requests.post(f"{cfg['metabase_base_url']}/api/card", headers=hdr(cfg), json=card)
-    r.raise_for_status()
-    return r.json()["id"]
-
-
-QUESTIONS = [
-    ("Totais em andamento (CNPJ + IM)",           ["cnpj_total", "im_total"]),
-    ("Totais por fase (Espera / CNPJ / IM / CRM)", ["espera_total", "cnpj_total", "im_total", "crm_total"]),
-    ("Sem atualização >5 dias",                    ["espera_sem_atualizacao", "cnpj_sem_atualizacao", "im_sem_atualizacao"]),
-    ("Atrasados (CNPJ / IM)",                      ["cnpj_atrasados", "im_atrasados"]),
-    ("Necessitam ação (CNPJ / IM)",                ["cnpj_necessitam_acao", "im_necessitam_acao"]),
-]
-
-
-def make_dashboard(cfg, coll_id, card_ids):
     r = requests.post(
         f"{cfg['metabase_base_url']}/api/dashboard",
         headers=hdr(cfg),
-        json={"name": DASHBOARD_NAME, "collection_id": coll_id},
+        json={"name": DASHBOARD_NAME, "collection_id": COLLECTION_ID},
     )
     r.raise_for_status()
     dash_id = r.json()["id"]
+    print(f"  Dashboard criado: id={dash_id}")
+    return dash_id
 
-    positions = [(0, 0), (12, 0), (0, 8), (12, 8), (0, 16)]
-    dashcards = [
-        {"card_id": cid, "row": positions[i][1], "col": positions[i][0], "size_x": 12, "size_y": 8}
-        for i, cid in enumerate(card_ids)
+
+# ── Builders de Markdown ──────────────────────────────────────────────────────
+
+def _fmt_date(d):
+    try:
+        from datetime import datetime
+        return datetime.strptime(d, "%Y-%m-%d").strftime("%d/%m/%Y")
+    except Exception:
+        return d
+
+
+def build_header(history, pages_url):
+    latest = history[-1] if history else {}
+    t  = latest.get("totals", {})
+    at = latest.get("atrasados", {})
+    na = latest.get("necessitam_acao", {})
+    sa = latest.get("sem_atualizacao", {})
+    data = _fmt_date(latest.get("data", "—"))
+    link = f"[Ver dashboard com gráficos →]({pages_url})" if pages_url else ""
+
+    return f"""# Life Cycle — Histórico Cumulativo
+{link}
+
+**Último snapshot: {data}** · {len(history)} dias registrados
+
+| | Espera | CNPJ | IM | CRM |
+|---|:---:|:---:|:---:|:---:|
+| **Total** | {t.get("Espera", 0)} | {t.get("CNPJ", 0)} | {t.get("IM", 0)} | {t.get("CRM", 0)} |
+| **Sem atualização** | {sa.get("Espera") or 0} | {sa.get("CNPJ") or 0} | {sa.get("IM") or 0} | {sa.get("CRM") or 0} |
+| **Atrasados** | — | {at.get("CNPJ", 0)} | {at.get("IM", 0)} | — |
+| **Necessitam ação** | — | {na.get("CNPJ", 0)} | {na.get("IM", 0)} | — |"""
+
+
+def build_totals_table(history):
+    rows = "\n".join(
+        f"| {_fmt_date(s['data'])} "
+        f"| {s['totals'].get('Espera', 0)} "
+        f"| {s['totals'].get('CNPJ', 0)} "
+        f"| {s['totals'].get('IM', 0)} "
+        f"| {s['totals'].get('CRM', 0)} |"
+        for s in reversed(history)
+    )
+    return f"""## Totais por fase
+
+| Data | Espera | CNPJ | IM | CRM |
+|------|:------:|:----:|:--:|:---:|
+{rows}"""
+
+
+def build_sem_atualizacao_table(history):
+    rows = "\n".join(
+        f"| {_fmt_date(s['data'])} "
+        f"| {s['sem_atualizacao'].get('Espera') or 0} "
+        f"| {s['sem_atualizacao'].get('CNPJ') or 0} "
+        f"| {s['sem_atualizacao'].get('IM') or 0} |"
+        for s in reversed(history)
+    )
+    return f"""## Sem atualização (>5 dias)
+
+| Data | Espera | CNPJ | IM |
+|------|:------:|:----:|:--:|
+{rows}"""
+
+
+def build_atrasados_table(history):
+    rows = "\n".join(
+        f"| {_fmt_date(s['data'])} "
+        f"| {s['atrasados'].get('CNPJ', 0)} "
+        f"| {s['atrasados'].get('IM', 0)} "
+        f"| {s['necessitam_acao'].get('CNPJ', 0)} "
+        f"| {s['necessitam_acao'].get('IM', 0)} |"
+        for s in reversed(history)
+    )
+    return f"""## Atrasados e necessitam ação
+
+| Data | Atr. CNPJ | Atr. IM | Ação CNPJ | Ação IM |
+|------|:---------:|:-------:|:---------:|:-------:|
+{rows}"""
+
+
+# ── Montar e publicar cards ───────────────────────────────────────────────────
+
+def text_card(slot_id, row, col, size_x, size_y, md):
+    return {
+        "id": slot_id,
+        "card_id": None,
+        "row": row, "col": col, "size_x": size_x, "size_y": size_y,
+        "visualization_settings": {
+            "text": md,
+            "virtual_card": {
+                "display": "text",
+                "dataset_query": {},
+                "name": "",
+                "visualization_settings": {},
+                "archived": False,
+            },
+        },
+    }
+
+
+def push_cards(cfg, dash_id, history, pages_url):
+    cards = [
+        text_card(-1,  0,  0, 24,  7, build_header(history, pages_url)),
+        text_card(-2,  7,  0, 12, 16, build_totals_table(history)),
+        text_card(-3,  7, 12, 12, 16, build_atrasados_table(history)),
+        text_card(-4, 23,  0, 24, 14, build_sem_atualizacao_table(history)),
     ]
-    r2 = requests.put(
+    r = requests.put(
         f"{cfg['metabase_base_url']}/api/dashboard/{dash_id}/cards",
         headers=hdr(cfg),
-        json={"cards": dashcards},
+        json={"cards": cards},
     )
-    r2.raise_for_status()
-    return dash_id
+    r.raise_for_status()
+    print(f"  {len(cards)} cards publicados.")
 
 
 # ── Main ─────────────────────────────────────────────────────────────────────
 
 def main():
-    native_mode = "--native" in sys.argv
-
     cfg = load_cfg()
+
     with open(HISTORY_PATH, encoding="utf-8") as f:
         history = json.load(f)
     print(f"Histórico: {len(history)} snapshots")
 
-    print("Localizando coleção...")
-    coll_id = find_collection(cfg)
+    pages_url = cfg.get("pages_url", "")
+    if not pages_url:
+        print("  AVISO: PAGES_URL não definida — link para gráficos omitido.")
 
-    print("Identificando banco de dados...")
-    db_id = find_db(cfg)
+    print("Localizando/criando dashboard...")
+    dash_id = find_or_create_dashboard(cfg)
 
-    if native_mode:
-        print("Modo: SQL nativo (sem admin)")
-        model_card_id = setup_via_native(cfg, history, coll_id, db_id)
-
-        print("Criando perguntas...")
-        card_ids = [
-            make_question_from_model(cfg, coll_id, db_id, model_card_id, name, metrics)
-            for name, metrics in QUESTIONS
-        ]
-    else:
-        print("Modo: CSV upload (requer admin)")
-        model_card_id, db_id, table_id, fields = setup_via_csv(cfg, history, coll_id, db_id)
-
-        if "data" not in fields:
-            raise RuntimeError(f"Campo 'data' não encontrado. Disponíveis: {list(fields.keys())}")
-        date_fid = fields["data"]
-
-        print("Criando perguntas...")
-        card_ids = [
-            make_question_from_table(cfg, coll_id, db_id, table_id, date_fid, name, metrics)
-            for name, metrics in QUESTIONS
-        ]
-
-    print(f"  {len(card_ids)} perguntas criadas: {card_ids}")
-
-    print("Criando dashboard...")
-    dash_id = make_dashboard(cfg, coll_id, card_ids)
+    print("Publicando cards...")
+    push_cards(cfg, dash_id, history, pages_url)
 
     url = f"{cfg['metabase_base_url']}/dashboard/{dash_id}"
-    print(f"\nDashboard criado: {url}")
-    print(f"\nAdicione estes secrets no GitHub Actions:")
-    print(f"  METABASE_MODEL_CARD_ID={model_card_id}")
-    print(f"  METABASE_CUMULATIVE_DASHBOARD_ID={dash_id}")
+    print(f"\nDashboard disponível: {url}")
+    print(f"\nAdicione ao GitHub Actions Secrets:")
+    print(f"  METABASE_TEXT_DASHBOARD_ID={dash_id}")
 
 
 if __name__ == "__main__":
