@@ -2,8 +2,7 @@ name: Relatório Diário de Abertura
 
 on:
   schedule:
-    # 9h UTC = 6h horário de Brasília (UTC-3)
-    - cron: '0 9 * * *'
+    - cron: '0 6 * * *'
   workflow_dispatch:  # permite disparo manual pelo Actions
 
 permissions:
