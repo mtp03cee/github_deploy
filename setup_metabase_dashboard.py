@@ -171,12 +171,23 @@ def text_card(slot_id, row, col, size_x, size_y, md):
     }
 
 
-def push_cards(cfg, dash_id, history, pages_url):
+def push_cards(cfg, dash_id, history, cohort_tables, pages_url):
+    from cohort import build_cohort_markdown
+
+    # Linha 0–6   : cabeçalho com resumo e link
+    # Linha 7–22  : totais | atrasados+ação
+    # Linha 23–36 : sem atualização
+    # Linha 37–52 : cohort CNPJ | cohort IM
+    # Linha 53–68 : cohort Espera | cohort CRM
     cards = [
         text_card(-1,  0,  0, 24,  7, build_header(history, pages_url)),
         text_card(-2,  7,  0, 12, 16, build_totals_table(history)),
         text_card(-3,  7, 12, 12, 16, build_atrasados_table(history)),
         text_card(-4, 23,  0, 24, 14, build_sem_atualizacao_table(history)),
+        text_card(-5, 37,  0, 12, 16, build_cohort_markdown(cohort_tables, "CNPJ")),
+        text_card(-6, 37, 12, 12, 16, build_cohort_markdown(cohort_tables, "IM")),
+        text_card(-7, 53,  0, 12, 16, build_cohort_markdown(cohort_tables, "Espera")),
+        text_card(-8, 53, 12, 12, 16, build_cohort_markdown(cohort_tables, "CRM")),
     ]
     r = requests.put(
         f"{cfg['metabase_base_url']}/api/dashboard/{dash_id}/cards",
@@ -196,6 +207,21 @@ def main():
         history = json.load(f)
     print(f"Histórico: {len(history)} snapshots")
 
+    # Carrega cohort se disponível
+    cohort_tables = {}
+    try:
+        from cohort import load_cohort_snapshots, compute_cohorts
+        snaps = load_cohort_snapshots()
+        if snaps:
+            # Usa os cards do snapshot mais recente para recomputar
+            latest_cards = snaps[-1]["cards"]
+            cohort_tables = compute_cohorts(latest_cards)
+            print(f"Cohort: {sum(len(v) for v in cohort_tables.values())} semanas")
+        else:
+            print("Cohort: cohort_snapshots.json vazio ou inexistente.")
+    except Exception as e:
+        print(f"AVISO: cohort não carregado: {e}")
+
     pages_url = cfg.get("pages_url", "")
     if not pages_url:
         print("  AVISO: PAGES_URL não definida — link para gráficos omitido.")
@@ -204,7 +230,7 @@ def main():
     dash_id = find_or_create_dashboard(cfg)
 
     print("Publicando cards...")
-    push_cards(cfg, dash_id, history, pages_url)
+    push_cards(cfg, dash_id, history, cohort_tables, pages_url)
 
     url = f"{cfg['metabase_base_url']}/dashboard/{dash_id}"
     print(f"\nDashboard disponível: {url}")

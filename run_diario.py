@@ -245,20 +245,29 @@ def post_slack_workflow(webhook_url, text):
         raise RuntimeError(f"Slack respondeu {r.status_code}: {r.text[:200]}")
 
 
-def regenerate_dashboard(history, template_path, output_path):
+def regenerate_dashboard(history, cohort_tables, template_path, output_path):
     if not os.path.exists(template_path):
         print(f"  AVISO: {template_path} nao encontrado, pulando dashboard.")
         return
     with open(template_path, encoding="utf-8") as f:
         tpl = f.read()
+
+    # Serializa cohort_tables: converte date → str
+    def serial(obj):
+        if isinstance(obj, date):
+            return obj.isoformat()
+        return obj
+
     html = tpl.replace(
         "__HISTORY_PLACEHOLDER__", json.dumps(history, ensure_ascii=False)
-    ).replace("__COHORT_PLACEHOLDER__", "[]")
+    ).replace(
+        "__COHORT_PLACEHOLDER__", json.dumps(cohort_tables, ensure_ascii=False, default=serial)
+    )
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(html)
 
 
-def push_historico_to_metabase(history, cfg):
+def push_to_metabase(history, cohort_tables, cfg):
     dash_id = cfg.get("metabase_text_dashboard_id")
     if not dash_id:
         print("  AVISO: METABASE_TEXT_DASHBOARD_ID não configurado — pulando update Metabase.")
@@ -266,7 +275,7 @@ def push_historico_to_metabase(history, cfg):
 
     from setup_metabase_dashboard import push_cards
     try:
-        push_cards(cfg, int(dash_id), history, cfg.get("pages_url", ""))
+        push_cards(cfg, int(dash_id), history, cohort_tables, cfg.get("pages_url", ""))
         print(f"  Metabase dashboard {dash_id} atualizado.")
     except Exception as e:
         print(f"  AVISO: update Metabase falhou: {e}")
@@ -300,15 +309,30 @@ def main():
     history = append_history(snapshot, HISTORY_PATH)
     print(f"  Historico: {len(history)} snapshots.")
 
+    # Cohort: extrai cards da tabela_completa e calcula retenção por fase
+    print("  Calculando cohorts...")
+    cohort_tables = {}
+    try:
+        from cohort import extract_card_snapshot, save_cohort_snapshot, compute_cohorts
+        cards = extract_card_snapshot(dfs["tabela_completa"])
+        if cards:
+            save_cohort_snapshot(cards)
+            cohort_tables = compute_cohorts(cards)
+            print(f"  Cohort: {sum(len(v) for v in cohort_tables.values())} semanas calculadas.")
+        else:
+            print("  Cohort: nenhum card extraído (verificar colunas).")
+    except Exception as e:
+        print(f"  AVISO: cohort falhou: {e}")
+
     msg = format_message(snapshot)
     print("  Enviando Slack...")
     post_slack_workflow(cfg["slack_webhook_url"], msg)
     print("  Enviado.")
 
-    regenerate_dashboard(history, TEMPLATE_PATH, DASHBOARD_HTML_PATH)
+    regenerate_dashboard(history, cohort_tables, TEMPLATE_PATH, DASHBOARD_HTML_PATH)
     print(f"  Dashboard atualizado: {DASHBOARD_HTML_PATH}")
 
-    push_historico_to_metabase(history, cfg)
+    push_to_metabase(history, cohort_tables, cfg)
 
     print(f"[{datetime.now().isoformat()}] Concluido.")
 
