@@ -14026,5 +14026,3458 @@
         "data_CRM": "2026-05-14"
       }
     ]
+  },
+  {
+    "data": "2026-06-24",
+    "cards": [
+      {
+        "cpf": "70709261110",
+        "etapa_num": 24,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-11",
+        "data_IM": null,
+        "data_CRM": "2026-04-30"
+      },
+      {
+        "cpf": "12593155418",
+        "etapa_num": 20,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "48823381819",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-24",
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "5625023352",
+        "etapa_num": 20,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "14062188716",
+        "etapa_num": 18,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "13247737405",
+        "etapa_num": 11,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-16",
+        "data_IM": null,
+        "data_CRM": "2026-03-16"
+      },
+      {
+        "cpf": "2450512012",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "11885794959",
+        "etapa_num": 18,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-10",
+        "data_IM": null,
+        "data_CRM": "2026-06-10"
+      },
+      {
+        "cpf": "11883389607",
+        "etapa_num": 18,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "75154536134",
+        "etapa_num": 12,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "11019117605",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "44114469877",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "10151994960",
+        "etapa_num": 1,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-14",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "3960431279",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-26",
+        "data_IM": null,
+        "data_CRM": "2026-03-26"
+      },
+      {
+        "cpf": "17642748736",
+        "etapa_num": 21,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": "2026-02-19"
+      },
+      {
+        "cpf": "8302646989",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "74087797104",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "6502396100",
+        "etapa_num": 1,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-14",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "18086574709",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "9607738608",
+        "etapa_num": 20,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "6507822914",
+        "etapa_num": 18,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-16",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "1631345028",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-08",
+        "data_IM": null,
+        "data_CRM": "2026-04-16"
+      },
+      {
+        "cpf": "12424675996",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-02",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "13707385604",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "95881816587",
+        "etapa_num": 18,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "712226346",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "27807476842",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "10694772658",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-27",
+        "data_IM": null,
+        "data_CRM": "2026-03-27"
+      },
+      {
+        "cpf": "1085547086",
+        "etapa_num": 20,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "23330479841",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-07",
+        "data_IM": null,
+        "data_CRM": "2026-05-07"
+      },
+      {
+        "cpf": "1660745004",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-11",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "5960625911",
+        "etapa_num": 0,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "6732229346",
+        "etapa_num": 18,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "3579423100",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-06",
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "43970106842",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "13049856602",
+        "etapa_num": 21,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": "2026-02-20"
+      },
+      {
+        "cpf": "38433295837",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "48522914893",
+        "etapa_num": 20,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "11566548748",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-26",
+        "data_IM": null,
+        "data_CRM": "2026-05-22"
+      },
+      {
+        "cpf": "13321744775",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-27",
+        "data_IM": null,
+        "data_CRM": "2026-03-27"
+      },
+      {
+        "cpf": "12629867617",
+        "etapa_num": 24,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-24",
+        "data_IM": null,
+        "data_CRM": "2026-03-24"
+      },
+      {
+        "cpf": "7680493936",
+        "etapa_num": 20,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "12496296673",
+        "etapa_num": 18,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "10123945658",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-19",
+        "data_IM": null,
+        "data_CRM": "2026-06-02"
+      },
+      {
+        "cpf": "2954182148",
+        "etapa_num": 20,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "7592765527",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "42308482850",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "9155714471",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "42453627821",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "2833712189",
+        "etapa_num": 21,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-18",
+        "data_IM": null,
+        "data_CRM": "2026-02-23"
+      },
+      {
+        "cpf": "5964337511",
+        "etapa_num": 0,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "92184170704",
+        "etapa_num": 1,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-14",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "16084630790",
+        "etapa_num": 22,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-08",
+        "data_IM": null,
+        "data_CRM": "2026-05-08"
+      },
+      {
+        "cpf": "836937260",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "35003937806",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-10",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "9363353940",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-28",
+        "data_IM": null,
+        "data_CRM": "2026-05-06"
+      },
+      {
+        "cpf": "10579950611",
+        "etapa_num": 2,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-20",
+        "data_IM": null,
+        "data_CRM": "2026-04-20"
+      },
+      {
+        "cpf": "11506457681",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-10",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "44248469898",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-24",
+        "data_IM": null,
+        "data_CRM": "2026-03-24"
+      },
+      {
+        "cpf": "71731144113",
+        "etapa_num": 1,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-14",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "3145625080",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-04",
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "7702533935",
+        "etapa_num": 2,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-30",
+        "data_IM": null,
+        "data_CRM": "2026-03-30"
+      },
+      {
+        "cpf": "42550515854",
+        "etapa_num": 13,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-13",
+        "data_IM": null,
+        "data_CRM": "2026-03-16"
+      },
+      {
+        "cpf": "6595691167",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-16",
+        "data_IM": null,
+        "data_CRM": "2026-04-16"
+      },
+      {
+        "cpf": "80152115900",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-22",
+        "data_IM": null,
+        "data_CRM": "2026-05-14"
+      },
+      {
+        "cpf": "344297357",
+        "etapa_num": 22,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-26",
+        "data_IM": null,
+        "data_CRM": "2026-03-26"
+      },
+      {
+        "cpf": "11227135840",
+        "etapa_num": 0,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "8085572540",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-19",
+        "data_IM": null,
+        "data_CRM": "2026-03-16"
+      },
+      {
+        "cpf": "80064048950",
+        "etapa_num": 2,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-22",
+        "data_IM": null,
+        "data_CRM": "2026-03-22"
+      },
+      {
+        "cpf": "5754857950",
+        "etapa_num": 22,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-14",
+        "data_IM": null,
+        "data_CRM": "2026-05-14"
+      },
+      {
+        "cpf": "37015462826",
+        "etapa_num": 21,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-17",
+        "data_IM": null,
+        "data_CRM": "2026-04-28"
+      },
+      {
+        "cpf": "45635526829",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "34637701805",
+        "etapa_num": 2,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-24",
+        "data_IM": null,
+        "data_CRM": "2026-03-24"
+      },
+      {
+        "cpf": "6659679189",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-08",
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "8033535962",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "44378216884",
+        "etapa_num": 21,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-17",
+        "data_IM": null,
+        "data_CRM": "2026-02-25"
+      },
+      {
+        "cpf": "15747260723",
+        "etapa_num": 8,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-23",
+        "data_IM": null,
+        "data_CRM": "2026-04-23"
+      },
+      {
+        "cpf": "8709899600",
+        "etapa_num": 6,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-24",
+        "data_IM": null,
+        "data_CRM": "2026-04-24"
+      },
+      {
+        "cpf": "78575095234",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-08",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "8414979580",
+        "etapa_num": 14,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-17",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "2682173276",
+        "etapa_num": 10,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-17",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "9499001921",
+        "etapa_num": 8,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-14",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "11817998137",
+        "etapa_num": 0,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-23",
+        "data_IM": null,
+        "data_CRM": "2026-06-23"
+      },
+      {
+        "cpf": "5601885109",
+        "etapa_num": 22,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-11",
+        "data_IM": null,
+        "data_CRM": "2026-06-11"
+      },
+      {
+        "cpf": "4775749552",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-16",
+        "data_IM": null,
+        "data_CRM": "2026-03-16"
+      },
+      {
+        "cpf": "11882927656",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-16",
+        "data_IM": null,
+        "data_CRM": "2026-03-16"
+      },
+      {
+        "cpf": "12633018602",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-05",
+        "data_IM": null,
+        "data_CRM": "2026-03-19"
+      },
+      {
+        "cpf": "6686989690",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-26",
+        "data_IM": null,
+        "data_CRM": "2026-03-18"
+      },
+      {
+        "cpf": "43848317818",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-08",
+        "data_IM": null,
+        "data_CRM": "2026-06-16"
+      },
+      {
+        "cpf": "5889490192",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-23",
+        "data_IM": null,
+        "data_CRM": "2026-03-19"
+      },
+      {
+        "cpf": "1013395930",
+        "etapa_num": 0,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-16",
+        "data_IM": null,
+        "data_CRM": "2026-04-16"
+      },
+      {
+        "cpf": "9051156944",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-04",
+        "data_IM": null,
+        "data_CRM": "2026-06-16"
+      },
+      {
+        "cpf": "3274798177",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-22",
+        "data_IM": null,
+        "data_CRM": "2026-04-09"
+      },
+      {
+        "cpf": "11211310698",
+        "etapa_num": 22,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-24",
+        "data_IM": null,
+        "data_CRM": "2026-03-24"
+      },
+      {
+        "cpf": "4651533132",
+        "etapa_num": 1,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-14",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "12383587990",
+        "etapa_num": 21,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-22",
+        "data_IM": null,
+        "data_CRM": "2026-06-22"
+      },
+      {
+        "cpf": "12673504745",
+        "etapa_num": 14,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-22",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "2256816257",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-22",
+        "data_IM": null,
+        "data_CRM": "2026-05-11"
+      },
+      {
+        "cpf": "4370366429",
+        "etapa_num": 0,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-14",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "7584060374",
+        "etapa_num": 1,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-02",
+        "data_IM": null,
+        "data_CRM": "2026-06-02"
+      },
+      {
+        "cpf": "60522084303",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-17",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "62181167354",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "9206012606",
+        "etapa_num": 0,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-14",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "7369951960",
+        "etapa_num": 20,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-12",
+        "data_IM": null,
+        "data_CRM": "2026-04-09"
+      },
+      {
+        "cpf": "13400893609",
+        "etapa_num": 1,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-17",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "40198503806",
+        "etapa_num": 21,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": "2026-02-19"
+      },
+      {
+        "cpf": "7789592602",
+        "etapa_num": 22,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-26",
+        "data_IM": null,
+        "data_CRM": "2026-03-26"
+      },
+      {
+        "cpf": "10279608985",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-12",
+        "data_IM": null,
+        "data_CRM": "2026-04-28"
+      },
+      {
+        "cpf": "5871194117",
+        "etapa_num": 21,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-22",
+        "data_IM": null,
+        "data_CRM": "2026-06-22"
+      },
+      {
+        "cpf": "86495334508",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-09",
+        "data_IM": null,
+        "data_CRM": "2026-03-21"
+      },
+      {
+        "cpf": "32652493876",
+        "etapa_num": 21,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-11",
+        "data_IM": null,
+        "data_CRM": "2026-06-17"
+      },
+      {
+        "cpf": "4363213",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-03",
+        "data_IM": null,
+        "data_CRM": "2026-03-24"
+      },
+      {
+        "cpf": "11423061942",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-20",
+        "data_IM": null,
+        "data_CRM": "2026-03-20"
+      },
+      {
+        "cpf": "2932368109",
+        "etapa_num": 1,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-24",
+        "data_IM": null,
+        "data_CRM": "2026-03-24"
+      },
+      {
+        "cpf": "7138567340",
+        "etapa_num": 14,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-22",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "87291967015",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-14",
+        "data_IM": null,
+        "data_CRM": "2026-03-23"
+      },
+      {
+        "cpf": "15625160783",
+        "etapa_num": 8,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-17",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "70063751186",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-16",
+        "data_IM": null,
+        "data_CRM": "2026-03-16"
+      },
+      {
+        "cpf": "93379005134",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-16",
+        "data_IM": null,
+        "data_CRM": "2026-03-18"
+      },
+      {
+        "cpf": "3391720026",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-22",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "3391720026",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-22",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "3391720026",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-22",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "3391720026",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-22",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "5160919309",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-16",
+        "data_IM": null,
+        "data_CRM": "2026-03-16"
+      },
+      {
+        "cpf": "7182577313",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-04",
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "12737451671",
+        "etapa_num": 20,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-07",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "1223932958",
+        "etapa_num": 2,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-20",
+        "data_IM": null,
+        "data_CRM": "2026-03-20"
+      },
+      {
+        "cpf": "1673056385",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-10",
+        "data_IM": null,
+        "data_CRM": "2026-04-16"
+      },
+      {
+        "cpf": "10986333697",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-16",
+        "data_IM": null,
+        "data_CRM": "2026-03-19"
+      },
+      {
+        "cpf": "9481647439",
+        "etapa_num": 19,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-19",
+        "data_IM": null,
+        "data_CRM": "2026-03-30"
+      },
+      {
+        "cpf": "9780504958",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-22",
+        "data_IM": null,
+        "data_CRM": "2026-04-29"
+      },
+      {
+        "cpf": "10168854740",
+        "etapa_num": 8,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-17",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "44544742811",
+        "etapa_num": 1,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-14",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "70204469147",
+        "etapa_num": 14,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-17",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "8407466956",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-16",
+        "data_IM": null,
+        "data_CRM": "2026-06-16"
+      },
+      {
+        "cpf": "9460923623",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-17",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "1806168545",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-17",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "3322151131",
+        "etapa_num": 13,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-10",
+        "data_IM": null,
+        "data_CRM": "2026-03-18"
+      },
+      {
+        "cpf": "10162239947",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-06",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "7165984500",
+        "etapa_num": 0,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-14",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "13659851728",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-20",
+        "data_IM": null,
+        "data_CRM": "2026-03-18"
+      },
+      {
+        "cpf": "784991944",
+        "etapa_num": 10,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-17",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "4404902948",
+        "etapa_num": 1,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-14",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "3686873338",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-20",
+        "data_IM": null,
+        "data_CRM": "2026-03-20"
+      },
+      {
+        "cpf": "4753095100",
+        "etapa_num": 14,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-22",
+        "data_IM": null,
+        "data_CRM": "2026-03-20"
+      },
+      {
+        "cpf": "3570112012",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-17",
+        "data_IM": null,
+        "data_CRM": "2026-04-16"
+      },
+      {
+        "cpf": "7502268545",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-26",
+        "data_IM": null,
+        "data_CRM": "2026-03-21"
+      },
+      {
+        "cpf": "7502268545",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-26",
+        "data_IM": null,
+        "data_CRM": "2026-03-21"
+      },
+      {
+        "cpf": "7502268545",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-26",
+        "data_IM": null,
+        "data_CRM": "2026-03-21"
+      },
+      {
+        "cpf": "7502268545",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-26",
+        "data_IM": null,
+        "data_CRM": "2026-03-21"
+      },
+      {
+        "cpf": "8672893689",
+        "etapa_num": 5,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-17",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "17700685703",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-23",
+        "data_IM": null,
+        "data_CRM": "2026-03-23"
+      },
+      {
+        "cpf": "3314017200",
+        "etapa_num": 1,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-20",
+        "data_IM": null,
+        "data_CRM": "2026-05-20"
+      },
+      {
+        "cpf": "868335967",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-17",
+        "data_IM": null,
+        "data_CRM": "2026-06-17"
+      },
+      {
+        "cpf": "13251434640",
+        "etapa_num": 1,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-12",
+        "data_IM": null,
+        "data_CRM": "2026-06-12"
+      },
+      {
+        "cpf": "16124394707",
+        "etapa_num": 13,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "1338369911",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-23",
+        "data_IM": null,
+        "data_CRM": "2026-03-19"
+      },
+      {
+        "cpf": "4300981116",
+        "etapa_num": 11,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-12",
+        "data_IM": null,
+        "data_CRM": "2026-06-12"
+      },
+      {
+        "cpf": "3366477270",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-23",
+        "data_IM": null,
+        "data_CRM": "2026-03-23"
+      },
+      {
+        "cpf": "2413206906",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-19",
+        "data_IM": null,
+        "data_CRM": "2026-03-19"
+      },
+      {
+        "cpf": "41567941800",
+        "etapa_num": 22,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-11",
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "6794614936",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "72942649372",
+        "etapa_num": 0,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-14",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "3971220126",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-27",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "2732105139",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-07",
+        "data_IM": null,
+        "data_CRM": "2026-03-20"
+      },
+      {
+        "cpf": "11830201638",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-01-29",
+        "data_IM": null,
+        "data_CRM": "2026-06-17"
+      },
+      {
+        "cpf": "10323054951",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-17",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "9403878673",
+        "etapa_num": 13,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-07",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "11481197444",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-17",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "70964066467",
+        "etapa_num": 13,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-23",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "70137034601",
+        "etapa_num": 0,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-14",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "40842365869",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-17",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "3155318279",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-06",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "6231253902",
+        "etapa_num": 23,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-19",
+        "data_IM": null,
+        "data_CRM": "2026-03-19"
+      },
+      {
+        "cpf": "5917486573",
+        "etapa_num": 0,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-14",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "11562721143",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-17",
+        "data_IM": null,
+        "data_CRM": "2026-03-18"
+      },
+      {
+        "cpf": "5526333132",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-16",
+        "data_IM": null,
+        "data_CRM": "2026-03-16"
+      },
+      {
+        "cpf": "3874405184",
+        "etapa_num": 9,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-17",
+        "data_IM": null,
+        "data_CRM": "2026-06-17"
+      },
+      {
+        "cpf": "3876366097",
+        "etapa_num": 1,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-16",
+        "data_IM": null,
+        "data_CRM": "2026-06-16"
+      },
+      {
+        "cpf": "989298361",
+        "etapa_num": 0,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-14",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "86122163546",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-17",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "28400140842",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-09",
+        "data_IM": null,
+        "data_CRM": "2026-04-09"
+      },
+      {
+        "cpf": "8347563900",
+        "etapa_num": 13,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-24",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "11901293963",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-22",
+        "data_IM": null,
+        "data_CRM": "2026-03-23"
+      },
+      {
+        "cpf": "9392456980",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-16",
+        "data_IM": null,
+        "data_CRM": "2026-03-16"
+      },
+      {
+        "cpf": "19717976775",
+        "etapa_num": 0,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-17",
+        "data_IM": null,
+        "data_CRM": "2026-06-17"
+      },
+      {
+        "cpf": "12077904941",
+        "etapa_num": 2,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-17",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "3647646946",
+        "etapa_num": 7,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-18",
+        "data_IM": null,
+        "data_CRM": "2026-05-18"
+      },
+      {
+        "cpf": "5727158974",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-21",
+        "data_IM": null,
+        "data_CRM": "2026-06-21"
+      },
+      {
+        "cpf": "5359419199",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-17",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "6180687676",
+        "etapa_num": 0,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-08",
+        "data_IM": null,
+        "data_CRM": "2026-05-08"
+      },
+      {
+        "cpf": "83231390087",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-16",
+        "data_IM": null,
+        "data_CRM": "2026-06-16"
+      },
+      {
+        "cpf": "32035151805",
+        "etapa_num": 21,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-13",
+        "data_IM": null,
+        "data_CRM": "2026-02-19"
+      },
+      {
+        "cpf": "12624057692",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-18",
+        "data_IM": null,
+        "data_CRM": "2026-06-16"
+      },
+      {
+        "cpf": "4724718056",
+        "etapa_num": 21,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-24",
+        "data_IM": null,
+        "data_CRM": "2026-04-29"
+      },
+      {
+        "cpf": "2731279184",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-11",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "45789515886",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-20",
+        "data_IM": null,
+        "data_CRM": "2026-04-22"
+      },
+      {
+        "cpf": "4597185178",
+        "etapa_num": 18,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-05",
+        "data_IM": null,
+        "data_CRM": "2026-04-30"
+      },
+      {
+        "cpf": "7515328606",
+        "etapa_num": 18,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-20",
+        "data_IM": null,
+        "data_CRM": "2026-06-16"
+      },
+      {
+        "cpf": "32515149898",
+        "etapa_num": 10,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-17",
+        "data_IM": null,
+        "data_CRM": "2026-06-17"
+      },
+      {
+        "cpf": "3589834102",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-17",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "60036817058",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-26",
+        "data_IM": null,
+        "data_CRM": "2026-06-16"
+      },
+      {
+        "cpf": "4864105103",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-28",
+        "data_IM": null,
+        "data_CRM": "2026-04-29"
+      },
+      {
+        "cpf": "15327847675",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-08",
+        "data_IM": null,
+        "data_CRM": "2026-06-16"
+      },
+      {
+        "cpf": "12439302767",
+        "etapa_num": 0,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-03",
+        "data_IM": null,
+        "data_CRM": "2026-06-03"
+      },
+      {
+        "cpf": "1498783627",
+        "etapa_num": 22,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-11",
+        "data_IM": null,
+        "data_CRM": "2026-03-26"
+      },
+      {
+        "cpf": "6926629102",
+        "etapa_num": 10,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-09",
+        "data_IM": null,
+        "data_CRM": "2026-06-09"
+      },
+      {
+        "cpf": "71178105210",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-13",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "5783493104",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-04",
+        "data_IM": null,
+        "data_CRM": "2026-06-16"
+      },
+      {
+        "cpf": "34034369850",
+        "etapa_num": 5,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-11",
+        "data_IM": null,
+        "data_CRM": "2026-02-11"
+      },
+      {
+        "cpf": "45733317",
+        "etapa_num": 22,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "49509448869",
+        "etapa_num": 19,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "34607305871",
+        "etapa_num": 19,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-14",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "50301083860",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-17",
+        "data_IM": null,
+        "data_CRM": "2026-06-17"
+      },
+      {
+        "cpf": "11223387674",
+        "etapa_num": 21,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-20",
+        "data_IM": null,
+        "data_CRM": "2026-03-26"
+      },
+      {
+        "cpf": "14419247606",
+        "etapa_num": 18,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "13904445707",
+        "etapa_num": 20,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "45965248822",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "6097998198",
+        "etapa_num": 19,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "44376534838",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "7722872956",
+        "etapa_num": 20,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "13674403609",
+        "etapa_num": 18,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "8639432686",
+        "etapa_num": 18,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "70901860409",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-16",
+        "data_IM": null,
+        "data_CRM": "2026-03-16"
+      },
+      {
+        "cpf": "1778025021",
+        "etapa_num": 16,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "36552644884",
+        "etapa_num": 1,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-14",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "86062301034",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "11793028699",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "5960759608",
+        "etapa_num": 20,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "3905414007",
+        "etapa_num": 21,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": "2026-02-19"
+      },
+      {
+        "cpf": "6045104110",
+        "etapa_num": 14,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "7433169164",
+        "etapa_num": 20,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "13106968613",
+        "etapa_num": 20,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "1040530206",
+        "etapa_num": 21,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-30",
+        "data_IM": null,
+        "data_CRM": "2026-04-24"
+      },
+      {
+        "cpf": "40685083802",
+        "etapa_num": 20,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "7532686124",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "10936382902",
+        "etapa_num": 20,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "15926094739",
+        "etapa_num": 2,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-04",
+        "data_IM": null,
+        "data_CRM": "2026-05-04"
+      },
+      {
+        "cpf": "5163291114",
+        "etapa_num": 18,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-14",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "9166373956",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-11",
+        "data_IM": null,
+        "data_CRM": "2026-04-22"
+      },
+      {
+        "cpf": "8914779777",
+        "etapa_num": 18,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "8842439908",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "1188245970",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "12163003485",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "42607026881",
+        "etapa_num": 18,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "9128270924",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "13195990601",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-24",
+        "data_IM": null,
+        "data_CRM": "2026-03-24"
+      },
+      {
+        "cpf": "3535679060",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "10472221914",
+        "etapa_num": 1,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-06",
+        "data_IM": null,
+        "data_CRM": "2026-05-06"
+      },
+      {
+        "cpf": "13040676610",
+        "etapa_num": 1,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-27",
+        "data_IM": null,
+        "data_CRM": "2026-04-27"
+      },
+      {
+        "cpf": "76423735204",
+        "etapa_num": 20,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "37843012826",
+        "etapa_num": 18,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-03",
+        "data_IM": null,
+        "data_CRM": "2026-04-30"
+      },
+      {
+        "cpf": "13106518847",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "91686547668",
+        "etapa_num": 18,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "38338673889",
+        "etapa_num": 21,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": "2026-02-19"
+      },
+      {
+        "cpf": "43368613820",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-05",
+        "data_IM": null,
+        "data_CRM": "2026-03-19"
+      },
+      {
+        "cpf": "43279451884",
+        "etapa_num": 11,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-24",
+        "data_IM": null,
+        "data_CRM": "2026-03-24"
+      },
+      {
+        "cpf": "12084318971",
+        "etapa_num": 21,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-01",
+        "data_IM": null,
+        "data_CRM": "2026-04-24"
+      },
+      {
+        "cpf": "3377082239",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-08",
+        "data_IM": null,
+        "data_CRM": "2026-04-16"
+      },
+      {
+        "cpf": "8625564658",
+        "etapa_num": 20,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "9909718995",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "13479041663",
+        "etapa_num": 18,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "1934801232",
+        "etapa_num": 20,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "7478792731",
+        "etapa_num": 22,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-19",
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "44412781879",
+        "etapa_num": 22,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-29",
+        "data_IM": null,
+        "data_CRM": "2026-04-29"
+      },
+      {
+        "cpf": "37905563863",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-17",
+        "data_IM": null,
+        "data_CRM": "2026-03-24"
+      },
+      {
+        "cpf": "47442254896",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "1569878056",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "5965596154",
+        "etapa_num": 22,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-25",
+        "data_IM": null,
+        "data_CRM": "2026-03-25"
+      },
+      {
+        "cpf": "46622599831",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "3471057935",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-24",
+        "data_IM": null,
+        "data_CRM": "2026-03-24"
+      },
+      {
+        "cpf": "10473719959",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "11103208683",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-31",
+        "data_IM": null,
+        "data_CRM": "2026-03-18"
+      },
+      {
+        "cpf": "86154346115",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-16",
+        "data_IM": null,
+        "data_CRM": "2026-03-16"
+      },
+      {
+        "cpf": "60046306323",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-24",
+        "data_IM": null,
+        "data_CRM": "2026-03-24"
+      },
+      {
+        "cpf": "11554181402",
+        "etapa_num": 8,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-16",
+        "data_IM": null,
+        "data_CRM": "2026-03-16"
+      },
+      {
+        "cpf": "3383176193",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-23",
+        "data_IM": null,
+        "data_CRM": "2026-03-23"
+      },
+      {
+        "cpf": "36956380870",
+        "etapa_num": 0,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "73374113168",
+        "etapa_num": 0,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-14",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "8937191962",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-11",
+        "data_IM": null,
+        "data_CRM": "2026-04-11"
+      },
+      {
+        "cpf": "70020982178",
+        "etapa_num": 1,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-14",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "5499472300",
+        "etapa_num": 1,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-24",
+        "data_IM": null,
+        "data_CRM": "2026-03-24"
+      },
+      {
+        "cpf": "80639712568",
+        "etapa_num": 18,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-07",
+        "data_IM": null,
+        "data_CRM": "2026-04-08"
+      },
+      {
+        "cpf": "44378218828",
+        "etapa_num": 21,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": "2026-02-19"
+      },
+      {
+        "cpf": "71401482104",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-09",
+        "data_IM": null,
+        "data_CRM": "2026-06-16"
+      },
+      {
+        "cpf": "3610271175",
+        "etapa_num": 1,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-22",
+        "data_IM": null,
+        "data_CRM": "2026-05-22"
+      },
+      {
+        "cpf": "12618433980",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-26",
+        "data_IM": null,
+        "data_CRM": "2026-03-26"
+      },
+      {
+        "cpf": "8979853467",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-22",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "8048391317",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-27",
+        "data_IM": null,
+        "data_CRM": "2026-04-28"
+      },
+      {
+        "cpf": "9868630924",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-16",
+        "data_IM": null,
+        "data_CRM": "2026-03-16"
+      },
+      {
+        "cpf": "5732224106",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-07",
+        "data_IM": null,
+        "data_CRM": "2026-04-17"
+      },
+      {
+        "cpf": "3764411007",
+        "etapa_num": 21,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-17",
+        "data_IM": null,
+        "data_CRM": "2026-02-20"
+      },
+      {
+        "cpf": "6263149507",
+        "etapa_num": 0,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-14",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "7827501680",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-19",
+        "data_IM": null,
+        "data_CRM": "2026-03-19"
+      },
+      {
+        "cpf": "6006374170",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-13",
+        "data_IM": null,
+        "data_CRM": "2026-03-19"
+      },
+      {
+        "cpf": "8753313941",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-01",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "1303487918",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-04",
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "34519816882",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-08",
+        "data_IM": null,
+        "data_CRM": "2026-02-19"
+      },
+      {
+        "cpf": "3574918666",
+        "etapa_num": 22,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-15",
+        "data_IM": null,
+        "data_CRM": "2026-05-15"
+      },
+      {
+        "cpf": "10854004920",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-15",
+        "data_IM": null,
+        "data_CRM": "2026-04-15"
+      },
+      {
+        "cpf": "3509666135",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-17",
+        "data_IM": null,
+        "data_CRM": "2026-04-17"
+      },
+      {
+        "cpf": "8380680901",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-22",
+        "data_IM": null,
+        "data_CRM": "2026-06-09"
+      },
+      {
+        "cpf": "7702505990",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-22",
+        "data_IM": null,
+        "data_CRM": "2026-03-26"
+      },
+      {
+        "cpf": "6055517159",
+        "etapa_num": 1,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-14",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "13469891680",
+        "etapa_num": 0,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-14",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "7894285552",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-16",
+        "data_IM": null,
+        "data_CRM": "2026-03-16"
+      },
+      {
+        "cpf": "94875570244",
+        "etapa_num": 1,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-14",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "3731682095",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-22",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "7361535941",
+        "etapa_num": 19,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-25",
+        "data_IM": null,
+        "data_CRM": "2026-03-25"
+      },
+      {
+        "cpf": "70456963103",
+        "etapa_num": 1,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-14",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "13609113677",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "7925279176",
+        "etapa_num": 1,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-02",
+        "data_IM": null,
+        "data_CRM": "2026-04-02"
+      },
+      {
+        "cpf": "562988971",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-16",
+        "data_IM": null,
+        "data_CRM": "2026-03-16"
+      },
+      {
+        "cpf": "45939669816",
+        "etapa_num": 1,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-12",
+        "data_IM": null,
+        "data_CRM": "2026-05-12"
+      },
+      {
+        "cpf": "19239069763",
+        "etapa_num": 22,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-11",
+        "data_IM": null,
+        "data_CRM": "2026-03-26"
+      },
+      {
+        "cpf": "6281645308",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-02",
+        "data_IM": null,
+        "data_CRM": "2026-03-19"
+      },
+      {
+        "cpf": "60228797012",
+        "etapa_num": 11,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-17",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "7000713500",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-16",
+        "data_IM": null,
+        "data_CRM": "2026-03-16"
+      },
+      {
+        "cpf": "5302701618",
+        "etapa_num": 6,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-12",
+        "data_IM": null,
+        "data_CRM": "2026-05-12"
+      },
+      {
+        "cpf": "7392811355",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-17",
+        "data_IM": null,
+        "data_CRM": "2026-05-04"
+      },
+      {
+        "cpf": "57793166",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "46160933850",
+        "etapa_num": 22,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-03",
+        "data_IM": null,
+        "data_CRM": "2026-06-03"
+      },
+      {
+        "cpf": "14418776656",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-24",
+        "data_IM": null,
+        "data_CRM": "2026-03-24"
+      },
+      {
+        "cpf": "10086962930",
+        "etapa_num": 21,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-22",
+        "data_IM": null,
+        "data_CRM": "2026-05-07"
+      },
+      {
+        "cpf": "2300105047",
+        "etapa_num": 9,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-20",
+        "data_IM": null,
+        "data_CRM": "2026-03-20"
+      },
+      {
+        "cpf": "40188266801",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-24",
+        "data_IM": null,
+        "data_CRM": "2026-03-24"
+      },
+      {
+        "cpf": "5033252283",
+        "etapa_num": 1,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-14",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "85996817535",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-17",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "40221881620",
+        "etapa_num": 22,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-03",
+        "data_IM": null,
+        "data_CRM": "2026-06-03"
+      },
+      {
+        "cpf": "6541597693",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-24",
+        "data_IM": null,
+        "data_CRM": "2026-03-24"
+      },
+      {
+        "cpf": "45707729860",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-12",
+        "data_IM": null,
+        "data_CRM": "2026-05-12"
+      },
+      {
+        "cpf": "5595066199",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-07",
+        "data_IM": null,
+        "data_CRM": "2026-04-22"
+      },
+      {
+        "cpf": "4006600593",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-24",
+        "data_IM": null,
+        "data_CRM": "2026-03-24"
+      },
+      {
+        "cpf": "3203543265",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-03",
+        "data_IM": null,
+        "data_CRM": "2026-05-13"
+      },
+      {
+        "cpf": "3224794100",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-31",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "11201137926",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-04",
+        "data_IM": null,
+        "data_CRM": "2026-06-16"
+      },
+      {
+        "cpf": "5736063905",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-16",
+        "data_IM": null,
+        "data_CRM": "2026-06-16"
+      },
+      {
+        "cpf": "35889891880",
+        "etapa_num": 0,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "70341321192",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-16",
+        "data_IM": null,
+        "data_CRM": "2026-03-16"
+      },
+      {
+        "cpf": "14857175665",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-27",
+        "data_IM": null,
+        "data_CRM": "2026-04-09"
+      },
+      {
+        "cpf": "5335018143",
+        "etapa_num": 18,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-11",
+        "data_IM": null,
+        "data_CRM": "2026-05-20"
+      },
+      {
+        "cpf": "3620747121",
+        "etapa_num": 1,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-22",
+        "data_IM": null,
+        "data_CRM": "2026-05-22"
+      },
+      {
+        "cpf": "389891150",
+        "etapa_num": 6,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-16",
+        "data_IM": null,
+        "data_CRM": "2026-06-16"
+      },
+      {
+        "cpf": "4353750160",
+        "etapa_num": 10,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-02",
+        "data_IM": null,
+        "data_CRM": "2026-06-02"
+      },
+      {
+        "cpf": "8707378645",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "47555431858",
+        "etapa_num": 0,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-14",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "6880040918",
+        "etapa_num": 1,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-14",
+        "data_IM": null,
+        "data_CRM": "2026-05-14"
+      },
+      {
+        "cpf": "70336868200",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-12",
+        "data_IM": null,
+        "data_CRM": "2026-05-07"
+      },
+      {
+        "cpf": "10161566774",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-16",
+        "data_IM": null,
+        "data_CRM": "2026-03-16"
+      },
+      {
+        "cpf": "1167129962",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-23",
+        "data_IM": null,
+        "data_CRM": "2026-03-23"
+      },
+      {
+        "cpf": "10778597911",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "71838721142",
+        "etapa_num": 0,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-14",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "61607171384",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-10",
+        "data_IM": null,
+        "data_CRM": "2026-03-19"
+      },
+      {
+        "cpf": "5283331199",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-11",
+        "data_IM": null,
+        "data_CRM": "2026-03-16"
+      },
+      {
+        "cpf": "13651179605",
+        "etapa_num": 2,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-12",
+        "data_IM": null,
+        "data_CRM": "2026-05-12"
+      },
+      {
+        "cpf": "34547476861",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-22",
+        "data_IM": null,
+        "data_CRM": "2026-04-21"
+      },
+      {
+        "cpf": "12625974630",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-17",
+        "data_IM": null,
+        "data_CRM": "2026-03-24"
+      },
+      {
+        "cpf": "97945609287",
+        "etapa_num": 13,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-24",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "2100107208",
+        "etapa_num": 6,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-17",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "7282260575",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-04",
+        "data_IM": null,
+        "data_CRM": "2026-03-19"
+      },
+      {
+        "cpf": "5836500908",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-30",
+        "data_IM": null,
+        "data_CRM": "2026-03-30"
+      },
+      {
+        "cpf": "10847775925",
+        "etapa_num": 18,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-16",
+        "data_IM": null,
+        "data_CRM": "2026-04-16"
+      },
+      {
+        "cpf": "3758683130",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-12",
+        "data_IM": null,
+        "data_CRM": "2026-06-16"
+      },
+      {
+        "cpf": "70315903457",
+        "etapa_num": 0,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-14",
+        "data_IM": null,
+        "data_CRM": "2026-05-14"
+      },
+      {
+        "cpf": "12953755675",
+        "etapa_num": 10,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-17",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "4238929080",
+        "etapa_num": 20,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-17",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "41711776858",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-01",
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "12065658452",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-21",
+        "data_IM": null,
+        "data_CRM": "2026-03-21"
+      },
+      {
+        "cpf": "7656796126",
+        "etapa_num": 14,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-22",
+        "data_IM": null,
+        "data_CRM": "2026-03-19"
+      },
+      {
+        "cpf": "11223474992",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-14",
+        "data_IM": null,
+        "data_CRM": "2026-04-13"
+      },
+      {
+        "cpf": "10609411632",
+        "etapa_num": 22,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-03",
+        "data_IM": null,
+        "data_CRM": "2026-06-03"
+      },
+      {
+        "cpf": "1099333547",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-16",
+        "data_IM": null,
+        "data_CRM": "2026-03-16"
+      },
+      {
+        "cpf": "7116346457",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-04",
+        "data_IM": null,
+        "data_CRM": "2026-04-28"
+      },
+      {
+        "cpf": "1313426903",
+        "etapa_num": 1,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-30",
+        "data_IM": null,
+        "data_CRM": "2026-03-30"
+      },
+      {
+        "cpf": "14643754613",
+        "etapa_num": 19,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-12",
+        "data_IM": null,
+        "data_CRM": "2026-04-24"
+      },
+      {
+        "cpf": "4802007183",
+        "etapa_num": 0,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-24",
+        "data_IM": null,
+        "data_CRM": "2026-03-24"
+      },
+      {
+        "cpf": "11004395957",
+        "etapa_num": 0,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-30",
+        "data_IM": null,
+        "data_CRM": "2026-03-30"
+      },
+      {
+        "cpf": "8532922562",
+        "etapa_num": 6,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-15",
+        "data_IM": null,
+        "data_CRM": "2026-03-16"
+      },
+      {
+        "cpf": "16023336701",
+        "etapa_num": 7,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-01",
+        "data_IM": null,
+        "data_CRM": "2026-04-01"
+      },
+      {
+        "cpf": "10153997974",
+        "etapa_num": 10,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-20",
+        "data_IM": null,
+        "data_CRM": "2026-03-20"
+      },
+      {
+        "cpf": "9293122952",
+        "etapa_num": 21,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-01",
+        "data_IM": null,
+        "data_CRM": "2026-04-13"
+      },
+      {
+        "cpf": "5292993131",
+        "etapa_num": 8,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-17",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "1686027419",
+        "etapa_num": 14,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-17",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "42088288899",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "3485712248",
+        "etapa_num": 21,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-02",
+        "data_IM": null,
+        "data_CRM": "2026-04-02"
+      },
+      {
+        "cpf": "33756002837",
+        "etapa_num": 9,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-17",
+        "data_IM": null,
+        "data_CRM": "2026-06-17"
+      },
+      {
+        "cpf": "2369411198",
+        "etapa_num": 22,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-08",
+        "data_IM": null,
+        "data_CRM": "2026-05-08"
+      },
+      {
+        "cpf": "1667474162",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-19",
+        "data_IM": null,
+        "data_CRM": "2026-05-19"
+      },
+      {
+        "cpf": "8936067664",
+        "etapa_num": 1,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-14",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "9419428990",
+        "etapa_num": 4,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-22",
+        "data_IM": null,
+        "data_CRM": "2026-06-22"
+      },
+      {
+        "cpf": "349807256",
+        "etapa_num": 1,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-24",
+        "data_IM": null,
+        "data_CRM": "2026-03-24"
+      },
+      {
+        "cpf": "2618134044",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-15",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "46359556804",
+        "etapa_num": 18,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-16",
+        "data_IM": null,
+        "data_CRM": "2026-06-16"
+      },
+      {
+        "cpf": "84181257568",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-06",
+        "data_IM": null,
+        "data_CRM": "2026-03-16"
+      },
+      {
+        "cpf": "6545049542",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-11",
+        "data_IM": null,
+        "data_CRM": "2026-05-11"
+      },
+      {
+        "cpf": "8996246930",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-17",
+        "data_IM": null,
+        "data_CRM": "2026-03-19"
+      },
+      {
+        "cpf": "6869525536",
+        "etapa_num": 8,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-19",
+        "data_IM": null,
+        "data_CRM": "2026-04-16"
+      },
+      {
+        "cpf": "8958405961",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-16",
+        "data_IM": null,
+        "data_CRM": "2026-03-16"
+      },
+      {
+        "cpf": "3338627246",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-06",
+        "data_IM": null,
+        "data_CRM": "2026-06-16"
+      },
+      {
+        "cpf": "13941789643",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-18",
+        "data_IM": null,
+        "data_CRM": "2026-03-18"
+      },
+      {
+        "cpf": "7140672962",
+        "etapa_num": 21,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-06",
+        "data_IM": null,
+        "data_CRM": "2026-04-06"
+      },
+      {
+        "cpf": "11275778402",
+        "etapa_num": 8,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-18",
+        "data_IM": null,
+        "data_CRM": "2026-03-18"
+      },
+      {
+        "cpf": "70621862444",
+        "etapa_num": 8,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-19",
+        "data_IM": null,
+        "data_CRM": "2026-03-19"
+      },
+      {
+        "cpf": "43784673805",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-17",
+        "data_IM": null,
+        "data_CRM": "2026-04-09"
+      },
+      {
+        "cpf": "14923189738",
+        "etapa_num": 10,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-26",
+        "data_IM": null,
+        "data_CRM": "2026-05-26"
+      },
+      {
+        "cpf": "4190380199",
+        "etapa_num": 14,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-05",
+        "data_IM": null,
+        "data_CRM": "2026-04-27"
+      },
+      {
+        "cpf": "46891517842",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "8384121575",
+        "etapa_num": 0,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-12",
+        "data_IM": null,
+        "data_CRM": "2026-06-12"
+      },
+      {
+        "cpf": "7868719389",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-24",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "10624981606",
+        "etapa_num": 0,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-16",
+        "data_IM": null,
+        "data_CRM": "2026-04-16"
+      },
+      {
+        "cpf": "3199513166",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-24",
+        "data_IM": null,
+        "data_CRM": "2026-03-16"
+      },
+      {
+        "cpf": "4816824227",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-20",
+        "data_IM": null,
+        "data_CRM": "2026-06-16"
+      },
+      {
+        "cpf": "3178588159",
+        "etapa_num": 13,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-15",
+        "data_IM": null,
+        "data_CRM": "2026-03-16"
+      },
+      {
+        "cpf": "8180354989",
+        "etapa_num": 15,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-20",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "42397712857",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-29",
+        "data_IM": null,
+        "data_CRM": "2026-04-01"
+      },
+      {
+        "cpf": "5615462159",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-19",
+        "data_IM": null,
+        "data_CRM": "2026-03-19"
+      },
+      {
+        "cpf": "11066242976",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-20",
+        "data_IM": null,
+        "data_CRM": "2026-06-16"
+      },
+      {
+        "cpf": "6723526481",
+        "etapa_num": 2,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-09",
+        "data_IM": null,
+        "data_CRM": "2026-06-09"
+      },
+      {
+        "cpf": "4297496003",
+        "etapa_num": 0,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-30",
+        "data_IM": null,
+        "data_CRM": "2026-03-30"
+      },
+      {
+        "cpf": "1167408250",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-02-18",
+        "data_IM": null,
+        "data_CRM": "2026-06-16"
+      },
+      {
+        "cpf": "13139191790",
+        "etapa_num": 22,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-26",
+        "data_IM": null,
+        "data_CRM": "2026-03-26"
+      },
+      {
+        "cpf": "48825351810",
+        "etapa_num": 13,
+        "data_Espera": null,
+        "data_CNPJ": "2026-05-14",
+        "data_IM": null,
+        "data_CRM": "2026-03-19"
+      },
+      {
+        "cpf": "12466791757",
+        "etapa_num": 2,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-09",
+        "data_IM": null,
+        "data_CRM": "2026-06-09"
+      },
+      {
+        "cpf": "46217049821",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "6335537605",
+        "etapa_num": 0,
+        "data_Espera": null,
+        "data_CNPJ": null,
+        "data_IM": null,
+        "data_CRM": null
+      },
+      {
+        "cpf": "4152606207",
+        "etapa_num": 13,
+        "data_Espera": null,
+        "data_CNPJ": "2026-06-23",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "9093160907",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-03-20",
+        "data_IM": null,
+        "data_CRM": "2026-03-20"
+      },
+      {
+        "cpf": "10279645678",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-30",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "7096610103",
+        "etapa_num": 17,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-24",
+        "data_IM": null,
+        "data_CRM": "2026-03-17"
+      },
+      {
+        "cpf": "48487373895",
+        "etapa_num": 0,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-14",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      },
+      {
+        "cpf": "42566727880",
+        "etapa_num": 1,
+        "data_Espera": null,
+        "data_CNPJ": "2026-04-14",
+        "data_IM": null,
+        "data_CRM": "2026-04-14"
+      }
+    ]
   }
 ]
