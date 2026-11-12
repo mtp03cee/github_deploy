@@ -2735,5 +2735,28 @@
       "CNPJ": 1,
       "IM": 3
     }
+  },
+  {
+    "data": "2026-11-12",
+    "totals": {
+      "Espera": 36,
+      "CNPJ": 17,
+      "IM": 33,
+      "CRM": 183
+    },
+    "sem_atualizacao": {
+      "Espera": 40,
+      "CNPJ": 10,
+      "IM": 28,
+      "CRM": 184
+    },
+    "atrasados": {
+      "CNPJ": 8,
+      "IM": 12
+    },
+    "necessitam_acao": {
+      "CNPJ": 1,
+      "IM": 3
+    }
   }
 ]
